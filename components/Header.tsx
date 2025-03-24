@@ -1,11 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi"; // Ikoner för hamburgermeny
+import Link from "next/link";
+import NavLinks from "@/components/NavLinks"; // Importera den nya NavLinks-komponenten
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // Endast ett state för att styra menyns öppning/stängning
+
+  // Funktion för att växla mellan öppning och stängning
+  const toggleMenu = () => {
+    setIsOpen((prev) => !prev); // Växla mellan true/false
+  };
 
   return (
     <nav className="bg-white shadow-md">
@@ -22,7 +28,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={toggleMenu}
           className="md:hidden text-gray-900"
           aria-label="Öppna meny"
         >
@@ -30,31 +36,18 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile Menu (syns bara när isOpen är true) */}
-      {isOpen && (
-        <div className="md:hidden bg-white shadow-md">
-          <div className="flex flex-col items-center space-y-4 py-4">
-            <NavLinks />
-          </div>
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden bg-white shadow-md overflow-hidden transition-all ease-in-out duration-500 ${
+          isOpen ? " max-h-[136px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="flex flex-col items-center space-y-4 py-4">
+          <NavLinks />
         </div>
-      )}
+      </div>
     </nav>
   );
 };
-
-// Återanvändbara navigationslänkar
-const NavLinks = () => (
-  <>
-    <Link href="/projects" className="hover:text-blue-600">
-      Projekt
-    </Link>
-    <Link href="/about" className="hover:text-blue-600">
-      Om mig
-    </Link>
-    <Link href="/contact" className="hover:text-blue-600">
-      Kontakt
-    </Link>
-  </>
-);
 
 export default Header;
