@@ -1,9 +1,11 @@
+import { useTranslations } from "next-intl";
+
 export default function Home() {
+  const t = useTranslations("Home");
+
   return (
     <section className="flex flex-col items-center justify-center text-center py-20">
-      <h1 className="text-5xl font-extrabold text-gray-900">
-        Hej! Jag heter Rasmus 👋
-      </h1>
+      <h1 className="text-5xl font-extrabold text-gray-900">{t("title")} 👋</h1>
       <p className="mt-4 text-lg text-gray-600">
         Jag är en frontendutvecklare med fokus på React och TypeScript.
       </p>
