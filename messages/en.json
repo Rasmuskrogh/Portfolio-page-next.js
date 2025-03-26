@@ -1,5 +1,16 @@
 {
+  "Header": {
+    "projectsLink": "Projects",
+    "aboutLink": "About me",
+    "contactLink": "Contact"
+  },
   "Home": {
-    "title": "Hi my name is Rasmus"
-  }
+    "title": "Hi my name is Rasmus",
+    "short": "I'm a frontend developer focused on React and Typescript",
+    "projectsButton": "See my projects",
+    "contactButton": "Contact me"
+  },
+  "Contact": {},
+  "About": {},
+  "Projects": {}
 }

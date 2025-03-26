@@ -1,5 +1,16 @@
 {
+  "Header": {
+    "projectsLink": "Projekt",
+    "aboutLink": "Om mig",
+    "contactLink": "Kontakt"
+  },
   "Home": {
-    "title": "Hej jag heter Rasmus"
-  }
+    "title": "Hej jag heter Rasmus",
+    "short": "Jag  är en frontendutvecklare med fokus på React och Typescript",
+    "projectsButton": "Se mina projekt",
+    "contactButton": "Kontakta mig"
+  },
+  "Contact": {},
+  "About": {},
+  "Projects": {}
 }

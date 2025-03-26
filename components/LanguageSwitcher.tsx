@@ -1,30 +1,22 @@
-"use client";
-
-import { useState, useTransition } from "react";
-import { useRouter } from "next/navigation";
-import { getLocale } from "next-intl/server";
+import { useState } from "react";
+import { changeLanguage } from "../actions/actions.language";
 
 export default function LanguageSwitcher() {
-  const [locale, setLocale] = useState("en"); // Standardvärde "en"
-  const router = useRouter();
-  const [isPending, startTransition] = useTransition();
+  const [locale, setLocale] = useState<"en" | "sv">("sv");
 
-  const toggleLocale = () => {
-    const newLocale = locale === "en" ? "sv" : "en";
-    setLocale(newLocale);
+  const handleClick = async () => {
+    const newLang = locale === "sv" ? "en" : "sv";
+    setLocale(newLang);
 
-    startTransition(() => {
-      router.refresh(); // Uppdaterar sidan utan att ladda om
-    });
+    await changeLanguage();
   };
 
   return (
     <button
-      onClick={toggleLocale}
-      disabled={isPending}
-      className="px-4 py-2 border rounded"
+      onClick={handleClick}
+      className="text-sm font-medium border border-gray-300 rounded px-2 py-1 hover:bg-gray-200 transition"
     >
-      {locale === "en" ? "SV" : "EN"}
+      {locale === "sv" ? "SV" : "EN"}
     </button>
   );
 }
