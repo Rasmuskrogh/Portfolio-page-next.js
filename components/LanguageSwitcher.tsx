@@ -16,7 +16,7 @@ export default function LanguageSwitcher() {
       onClick={handleClick}
       className="text-sm font-medium border border-gray-300 rounded px-2 py-1 hover:bg-gray-200 transition"
     >
-      {locale === "sv" ? "SV" : "EN"}
+      {locale === "sv" ? "EN" : "SV"}
     </button>
   );
 }

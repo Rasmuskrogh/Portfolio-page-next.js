@@ -10,7 +10,43 @@
     "projectsButton": "See my projects",
     "contactButton": "Contact me"
   },
-  "Contact": {},
-  "About": {},
-  "Projects": {}
+  "Contact": {
+    "title": "Contact",
+    "short": "Feel free to reach out through email och social media!",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "button": "Send"
+    },
+    "linksHeader": "Or find me on:"
+  },
+  "About": {
+    "title": "About me",
+    "description": "I am a passionate frontend developer with experience in modern web development technologies. Here you can read more about my background, my experiences and what drives me as a developer.",
+    "backgroundHeader": "Background",
+    "background": "I have a degree in web development from the Medieinstitutet and have recently completed an intensive frontend-development course with Lexicon. My passion for technology started early, and I love creating solutions that make a difference for users.",
+    "experienceHeader": "Experiences",
+    "experience": {
+      "1": "Frontend developer at Adssets (2022)",
+      "2": "Web development education from Medieinstitutet (2 years)",
+      "3": "Frontend developer education at Lexicon (2024)",
+      "4": "Experience with different CMS-platforms such as Storybloks, Shopware and Magento 2"
+    },
+    "skillsHeader": "Skills",
+    "skills": {
+      "1": "React & TypeScript",
+      "2": "JavaScript, HTML, CSS",
+      "3": "Vue.js, Nuxt.js",
+      "4": "MySQL, PostgreSQL",
+      "5": "Version handling with Git",
+      "6": "Experience with Node and Tailwind"
+    },
+    "goalsHeader": "Goals",
+    "goals": "I aspire to become an expert in React and TypeScript and look forward to building scalable and user-friendly solutions. I also want to continue developing in Node.js and modern frontend frameworks."
+  },
+  "Projects": {
+    "title": "My projects",
+    "short": "Here are some of the projects I've worked on. Click on a project to read more or to visit it live."
+  }
 }

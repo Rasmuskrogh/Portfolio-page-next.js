@@ -10,7 +10,43 @@
     "projectsButton": "Se mina projekt",
     "contactButton": "Kontakta mig"
   },
-  "Contact": {},
-  "About": {},
-  "Projects": {}
+  "Contact": {
+    "title": "Kontakt",
+    "short": "Hör gärna av dig via e-post eller sociala medier!",
+    "form": {
+      "name": "Namn",
+      "email": "E-post",
+      "message": "Meddelande",
+      "button": "Skicka"
+    },
+    "linksHeader": "Eller hitta mig på:"
+  },
+  "About": {
+    "title": "Om mig",
+    "description": "Jag är en passionerad frontendutvecklare med erfarenhet av moderna webbutvecklingsteknologier. Här kan du läsa mer om min bakgrund, mina erfarenheter och vad som driver mig som utvecklare.",
+    "backgroundHeader": "Bakgrund",
+    "background": "Jag har en utbildning i webbutveckling från Medieinstitutet och har nyligen genomfört en intensiv frontendutvecklingskurs med Lexicon. Min passion för teknik började tidigt, och jag älskar att skapa lösningar som gör skillnad för användare.",
+    "experienceHeader": "Erfarenheter",
+    "experience": {
+      "1": "Frontendutvecklare på Adssets (2022)",
+      "2": "Utbildning i webbutveckling från Medieinstitutet (2 år)",
+      "3": "Frontendutveckling med React och TypeScript i Lexicon (2024)",
+      "4": "Erfarenhet av olika CMS-plattformar som Storyblok, Shopware och Magento 2"
+    },
+    "skillsHeader": "Färdigheter",
+    "skills": {
+      "1": "React & TypeScript",
+      "2": "JavaScript, HTML, CSS",
+      "3": "Vue.js, Nuxt.js",
+      "4": "MySQL, PostgreSQL",
+      "5": "Versionering med Git",
+      "6": "Erfarenhet av Node.js och Tailwind"
+    },
+    "goalsHeader": "Mål",
+    "goals": "Jag strävar efter att bli en expert inom React och TypeScript och ser fram emot att bygga skalbara och användarvänliga lösningar. Jag vill även fortsätta utvecklas inom Node.js och moderna frontend-ramverk."
+  },
+  "Projects": {
+    "title": "Mina projekt",
+    "short": "Här är några av de projekt jag har jobbat på. Klicka på ett projekt för att läsa mer eller besöka det live."
+  }
 }

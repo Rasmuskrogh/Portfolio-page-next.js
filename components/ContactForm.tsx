@@ -1,8 +1,11 @@
 "use client";
+import { useTranslations } from "next-intl";
 
 import { useState } from "react";
 
 export default function ContactForm() {
+  const t = useTranslations("Contact.form");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -46,7 +49,7 @@ export default function ContactForm() {
       className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-md"
     >
       <label className="block mb-2 text-gray-700">
-        Namn
+        {t("name")}
         <input
           type="text"
           name="name"
@@ -58,7 +61,7 @@ export default function ContactForm() {
       </label>
 
       <label className="block mb-2 text-gray-700">
-        E-post
+        {t("email")}
         <input
           type="email"
           name="email"
@@ -70,7 +73,7 @@ export default function ContactForm() {
       </label>
 
       <label className="block mb-4 text-gray-700">
-        Meddelande
+        {t("message")}
         <textarea
           name="message"
           value={formData.message}
@@ -84,7 +87,7 @@ export default function ContactForm() {
         type="submit"
         className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
       >
-        Skicka
+        {t("button")}
       </button>
 
       {status && <p className="mt-4 text-gray-600">{status}</p>}
