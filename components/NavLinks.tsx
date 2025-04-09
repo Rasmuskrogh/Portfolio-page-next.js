@@ -6,13 +6,22 @@ const NavLinks = () => {
   const t = useTranslations("Header");
   return (
     <>
-      <Link href="/projects" className="hover:text-blue-600">
+      <Link
+        href="/projects"
+        className="text-white text-2xl hover:text-gray-300 transition-colors"
+      >
         {t("projectsLink")}
       </Link>
-      <Link href="/about" className="hover:text-blue-600">
+      <Link
+        href="/about"
+        className="text-white text-2xl hover:text-gray-300 transition-colors"
+      >
         {t("aboutLink")}
       </Link>
-      <Link href="/contact" className="hover:text-blue-600">
+      <Link
+        href="/contact"
+        className="text-white text-2xl hover:text-gray-300 transition-colors"
+      >
         {t("contactLink")}
       </Link>
     </>
