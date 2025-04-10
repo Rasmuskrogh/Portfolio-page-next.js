@@ -46,51 +46,56 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-md"
+      className="max-w-lg mx-auto p-8 bg-[#1a1a1a] rounded-lg shadow-lg"
     >
-      <label className="block mb-2 text-gray-700">
-        {t("name")}
+      <label className="block mb-6 text-white">
+        <span className="block text-lg font-lato mb-2">{t("name")}</span>
         <input
           type="text"
           name="name"
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full p-2 border rounded mt-1"
+          className="w-full p-3 bg-white/10 border border-white/20 rounded text-white placeholder-white/50 focus:outline-none focus:border-[#fb6f4c] transition-colors"
+          placeholder={t("name")}
         />
       </label>
 
-      <label className="block mb-2 text-gray-700">
-        {t("email")}
+      <label className="block mb-6 text-white">
+        <span className="block text-lg font-lato mb-2">{t("email")}</span>
         <input
           type="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full p-2 border rounded mt-1"
+          className="w-full p-3 bg-white/10 border border-white/20 rounded text-white placeholder-white/50 focus:outline-none focus:border-[#fb6f4c] transition-colors"
+          placeholder={t("email")}
         />
       </label>
 
-      <label className="block mb-4 text-gray-700">
-        {t("message")}
+      <label className="block mb-8 text-white">
+        <span className="block text-lg font-lato mb-2">{t("message")}</span>
         <textarea
           name="message"
           value={formData.message}
           onChange={handleChange}
           required
-          className="w-full p-2 border rounded mt-1 h-32"
+          className="w-full p-3 bg-white/10 border border-white/20 rounded text-white placeholder-white/50 focus:outline-none focus:border-[#fb6f4c] transition-colors h-32 resize-none"
+          placeholder={t("message")}
         ></textarea>
       </label>
 
       <button
         type="submit"
-        className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
+        className="w-full bg-[#fb6f4c] text-white p-3 rounded font-lato text-lg hover:bg-[#fb6f4c]/90 transition-colors"
       >
         {t("button")}
       </button>
 
-      {status && <p className="mt-4 text-gray-600">{status}</p>}
+      {status && (
+        <p className="mt-6 text-center text-white font-lato">{status}</p>
+      )}
     </form>
   );
 }

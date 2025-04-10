@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   const t = useTranslations("Home");
@@ -63,6 +64,9 @@ export default function Home() {
       <section className="py-20 bg-[#323131] text-white">
         <div className="pl-8 md:pl-16 pr-8 md:pr-16">
           <h2 className="text-4xl md:text-5xl font-open-sans mb-8">Contact</h2>
+          <div className="max-w-2xl mx-auto">
+            <ContactForm />
+          </div>
         </div>
       </section>
     </main>
