@@ -38,6 +38,33 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-open-sans mb-8">
             Working Experience
           </h2>
+          <div>
+            <h3>Frontend Developer (internship)</h3>
+            <h4>AIMX | October 2024 - January 2025</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Temporibus ex incidunt sunt rem nostrum ut eveniet nemo inventore
+              laudantium explicabo?
+            </p>
+          </div>
+          <div>
+            <h3>Frontend Developer </h3>
+            <h4>Adssets | May 2022 - January 2023</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Temporibus ex incidunt sunt rem nostrum ut eveniet nemo inventore
+              laudantium explicabo?
+            </p>
+          </div>
+          <div>
+            <h3>Web Devleoper (internship)</h3>
+            <h4>Nordic Web Team | eptember 2021 - May 2022</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Temporibus ex incidunt sunt rem nostrum ut eveniet nemo inventore
+              laudantium explicabo?
+            </p>
+          </div>
         </div>
       </section>
       {/* Projects Section */}
@@ -52,12 +79,56 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-open-sans mb-8">
             Education
           </h2>
+          <div>
+            <h3>Lexicon</h3>
+            <h4>IT-Professional - Continuing IT Education | 2024 -</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores
+              expedita eius quas possimus accusamus sunt asperiores non impedit
+              ipsum soluta.
+            </p>
+          </div>
+          <div>
+            <h3>Fullstack Bootcamp, Salt</h3>
+            <h4>Fullstack Javascript Developer | 2023</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto
+              amet eos eius ab nisi obcaecati ut quia commodi adipisci fugiat.
+            </p>
+          </div>
+          <div>
+            <h3>Medieinstitutet</h3>
+            <h4>E-commerce Web Development | 2020 - 2022</h4>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur
+              nobis alias recusandae accusamus ut aspernatur nesciunt animi esse
+              consectetur explicabo?
+            </p>
+          </div>
+          <div>
+            <h3>Malmö Music Accademy</h3>
+            <h4>Mucisian, classical, vocals | 2016 - 2019</h4>
+            <p>Bechelor's degree in classical music, baritone</p>
+          </div>
         </div>
       </section>
       {/* Skills Section */}
       <section className="py-20 bg-white text-black">
         <div className="pl-8 md:pl-16 pr-8 md:pr-16">
           <h2 className="text-4xl md:text-5xl font-open-sans mb-8">Skills</h2>
+          <div>
+            <h3>Main skills:</h3>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Javascript</li>
+              <li>React</li>
+              <li>Next.js</li>
+              <li>Typescript</li>
+              <li>PostgreSQL</li>
+              <li>Git</li>
+            </ul>
+          </div>
         </div>
       </section>
       {/* Contact Section */}
