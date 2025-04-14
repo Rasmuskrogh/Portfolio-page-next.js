@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { getTranslations } from "next-intl/server"; // För server-side translation
 import { supabase } from "@/lib/supabase"; // Supabase-klienten importeras här
 
@@ -38,12 +37,6 @@ export default async function ProjectsPage() {
               <p className="text-gray-700 mb-4">{project.description}</p>
             </div>
             <div className="flex gap-4 p-6 bg-gray-100">
-              <Link
-                href={`/projects/${project.slug}`}
-                className="w-full text-center bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
-              >
-                Läs mer
-              </Link>
               <a
                 href={project.link}
                 target="_blank"
