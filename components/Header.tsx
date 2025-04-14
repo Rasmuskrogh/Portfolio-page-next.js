@@ -7,18 +7,15 @@ import NavLinks from "@/components/NavLinks";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [isOpening, setIsOpening] = useState(false);
-  const [showIcon, setShowIcon] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -26,48 +23,32 @@ const Header = () => {
   }, []);
 
   const toggleMenu = () => {
-    if (!isOpen) {
-      // Change icon instantly
-      setShowIcon(true);
-      // Start opening animation
+    if (!isMenuOpen) {
       setIsOpening(true);
-      setIsOpen(true);
-      // Reset the opening state after animation completes
+      setIsMenuOpen(true);
       setTimeout(() => {
         setIsOpening(false);
       }, 300);
     } else {
-      // Change icon instantly
-      setShowIcon(false);
-      // Start closing animation
       setIsClosing(true);
-      // Wait for the animation to complete before closing
       setTimeout(() => {
-        setIsOpen(false);
+        setIsMenuOpen(false);
         setIsClosing(false);
       }, 300);
     }
   };
 
-  const handleOverlayClick = () => {
-    // Change icon instantly
-    setShowIcon(false);
+  const closeMenu = () => {
     setIsClosing(true);
-    // Wait for the animation to complete before closing
     setTimeout(() => {
-      setIsOpen(false);
+      setIsMenuOpen(false);
       setIsClosing(false);
     }, 300);
   };
 
-  // Don't render anything until after hydration
-  if (!mounted) {
-    return null;
-  }
-
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-black/80 backdrop-blur-sm" : "bg-transparent"
       }`}
     >
@@ -88,22 +69,25 @@ const Header = () => {
             className="text-white"
             aria-label="Toggle menu"
           >
-            {showIcon ? <FiX size={28} /> : <FiMenu size={28} />}
+            {isMenuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
           </button>
         </div>
       </div>
 
       {/* Menu Overlay */}
-      {isOpen && (
+      {(isMenuOpen || isClosing) && (
         <div
           className={`fixed inset-0 bg-black/90 backdrop-blur-sm transition-all duration-300 ${
             isClosing ? "opacity-0" : isOpening ? "opacity-0" : "opacity-100"
           }`}
-          onClick={handleOverlayClick}
+          onClick={closeMenu}
         >
-          <div className="absolute inset-0 flex flex-col items-center justify-center space-y-8 z-10">
+          <div
+            className="absolute inset-0 flex flex-col items-center justify-center space-y-8 z-10"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
-              onClick={toggleMenu}
+              onClick={closeMenu}
               className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
               aria-label="Close menu"
             >
@@ -113,7 +97,7 @@ const Header = () => {
           </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 };
 

@@ -1,14 +1,54 @@
+import { supabase } from "@/lib/supabase";
+import Image from "next/image";
+
 interface ProjectPageProps {
-  params: { slug: string };
+  params: {
+    slug: string;
+  };
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { data: project, error } = await supabase
+    .from("Projects")
+    .select("*")
+    .eq("slug", params.slug)
+    .single();
+
+  if (error) {
+    console.error("Error fetching project:", error.message);
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <h1 className="text-4xl">Project not found</h1>
+      </div>
+    );
+  }
+
+  if (!project) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <h1 className="text-4xl font-bold">Project not found</h1>
+      </div>
+    );
+  }
+
   return (
-    <section className="container mx-auto py-10">
-      <h1 className="text-4xl font-bold mb-4">Projekt: {params.slug}</h1>
-      <p className="text-gray-600">
-        Detaljerad information om projektet "{params.slug}".
-      </p>
-    </section>
+    <div className="min-h-screen">
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
+        <p className="text-xl mb-8">{project.description}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {project.images.map((image: string, index: number) => (
+            <div key={index} className="relative aspect-video">
+              <Image
+                src={image}
+                alt={`${project.title} screenshot ${index + 1}`}
+                fill
+                className="object-cover rounded-lg"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

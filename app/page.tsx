@@ -1,19 +1,20 @@
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 import ContactForm from "@/components/ContactForm";
+// import { useTranslation } from "react-i18next";
 
 export default function Home() {
-  const t = useTranslations("Home");
+  // const t = useTranslations("Home");
 
   return (
-    <main className="w-full">
+    <main className="min-h-screen">
       {/* Hero Section */}
       <section className="h-[40vh] flex flex-col items-start justify-start bg-[#323131] text-white relative">
         <div className="pl-4 pt-4 md:pl-8 lg:pl-16 pr-4 md:pr-8 lg:pr-16">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-league-spartan mb-2 md:mb-4 font-bold">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-league-spartan mb-2 md:mb-4 font-bold whitespace-nowrap">
             <span className="inline-block">Rasmus</span>{" "}
             <span className="inline-block">Krogh-Andersen</span>
           </h1>
-          <p className="text-xl sm:text-2xl md:text-3xl font-lato tracking-wider">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-lato tracking-wider whitespace-nowrap">
             <span className="inline-block">FRONTEND DEVELOPER</span> |{" "}
             <span className="inline-block">WEB DEVELOPER</span>
           </p>
@@ -71,9 +72,30 @@ export default function Home() {
               <li>
                 Created and updated banners using HTML, CSS, and JavaScript
               </li>
-              <li>Managed database entries using MySQL Workbench</li>
-              <li>Conducted code reviews for colleagues' merge requests</li>
-              <li>Prepared and delivered presentations for clients</li>
+              <li>
+                Set up and developed headless frontends:
+                <ul className="list-disc pl-6">
+                  <li>WordPress with WooCommerce</li>
+                  <li>Shopify</li>
+                  <li>Magento</li>
+                </ul>
+              </li>
+              <li>
+                Built responsive user interfaces from scratch, with focus on
+                component-based architecture
+              </li>
+              <li>
+                Integrated REST APIs and worked with local storage for data
+                handling
+              </li>
+              <li>
+                Practiced agile methodologies including daily standups,
+                retrospectives, and sprint planning
+              </li>
+              <li>
+                Managed tasks using Trello and GitHub Projects, following a
+                structured backlog and to-do workflow
+              </li>
             </ul>
           </div>
           <div className="mb-6 md:mb-8">
@@ -87,11 +109,26 @@ export default function Home() {
               <li>
                 Set up and developed headless frontends:
                 <ul className="list-disc pl-6">
-                  <li>PWA Studio and React.js with Magento 2 as the backend</li>
-                  <li>
-                    Vue.js and Nuxt.js with Storyblok or Shopware as the backend
-                  </li>
+                  <li>WordPress with WooCommerce</li>
+                  <li>Shopify</li>
+                  <li>Magento</li>
                 </ul>
+              </li>
+              <li>
+                Built responsive user interfaces from scratch, with focus on
+                component-based architecture
+              </li>
+              <li>
+                Integrated REST APIs and worked with local storage for data
+                handling
+              </li>
+              <li>
+                Practiced agile methodologies including daily standups,
+                retrospectives, and sprint planning
+              </li>
+              <li>
+                Managed tasks using Trello and GitHub Projects, following a
+                structured backlog and to-do workflow
               </li>
             </ul>
           </div>
@@ -161,11 +198,11 @@ export default function Home() {
                   <li>DOM manipulation</li>
                   <li>Node.js and REST APIs</li>
                   <li>Regular expressions</li>
-                  <li>Validation with Zod and Joi</li>
-                  <li>TypeScript</li>
-                  <li>Test-driven development (TDD) using Jest and Cypress</li>
                 </ul>
               </li>
+              <li>Validation with Zod and Joi</li>
+              <li>TypeScript</li>
+              <li>Test-driven development (TDD) using Jest and Cypress</li>
             </ul>
           </div>
           <div className="mb-6 md:mb-8">
@@ -195,7 +232,7 @@ export default function Home() {
               Musician, classical, vocals | 2016-2019
             </h4>
             <ul className="text-lg sm:text-xl md:text-2xl list-disc pl-4 md:pl-6">
-              <li>Bachelor's degree in classical music (baritone)</li>
+              <li>Bachelor&apos;s degree in classical music (baritone)</li>
             </ul>
           </div>
         </div>
