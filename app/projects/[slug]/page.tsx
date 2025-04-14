@@ -1,13 +1,13 @@
 import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 
-interface ProjectPageProps {
+interface PageProps {
   params: {
     slug: string;
   };
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage({ params }: PageProps) {
   const { data: project, error } = await supabase
     .from("Projects")
     .select("*")
