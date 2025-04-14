@@ -1,8 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi"; // Ikoner för hamburgermeny
-import { usePathname } from "next/navigation";
-import Link from "next/link";
 import NavLinks from "@/components/NavLinks";
 import LanguageSwitcher from "./LanguageSwitcher";
 
@@ -11,7 +9,6 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [isOpening, setIsOpening] = useState(false);
-  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {

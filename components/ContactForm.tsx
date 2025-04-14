@@ -13,7 +13,6 @@ export default function ContactForm() {
   const [status, setStatus] = useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
-  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -24,14 +23,12 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("submitting");
-    setError(null);
 
     try {
       await sendEmail(formData);
       setFormData({ name: "", email: "", message: "" });
       setStatus("success");
-    } catch (err) {
-      setError("Failed to send message. Please try again later.");
+    } catch {
       setStatus("error");
     }
   };
