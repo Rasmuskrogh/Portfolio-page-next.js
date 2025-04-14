@@ -74,7 +74,7 @@ const Header = () => {
       <div className="flex items-center justify-between p-4">
         <div>
           <h1
-            className={`text-white text-2xl font-bold transition-all duration-300 ${
+            className={`text-white text-xl sm:text-2xl md:text-3xl font-bold transition-all duration-300 whitespace-nowrap ${
               isScrolled ? "opacity-100" : "opacity-0"
             }`}
           >

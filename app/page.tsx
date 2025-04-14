@@ -8,12 +8,12 @@ export default function Home() {
     <main className="w-full">
       {/* Hero Section */}
       <section className="h-[40vh] flex flex-col items-start justify-start bg-[#323131] text-white relative">
-        <div className="pl-4 pt-4 md:pl-4 pr-28">
-          <h1 className="text-6xl md:text-7xl font-league-spartan mb-4 font-bold">
+        <div className="pl-4 pt-4 md:pl-8 lg:pl-16 pr-4 md:pr-8 lg:pr-16">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-league-spartan mb-2 md:mb-4 font-bold">
             <span className="inline-block">Rasmus</span>{" "}
             <span className="inline-block">Krogh-Andersen</span>
           </h1>
-          <p className="text-2xl md:text-3xl font-lato tracking-wider">
+          <p className="text-xl sm:text-2xl md:text-3xl font-lato tracking-wider">
             <span className="inline-block">FRONTEND DEVELOPER</span> |{" "}
             <span className="inline-block">WEB DEVELOPER</span>
           </p>
@@ -21,12 +21,12 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-[#fb6f4c] text-black">
-        <div className="pl-8 md:pl-16 pr-8 md:pr-16">
-          <h2 className="text-4xl md:text-5xl font-open-sans mb-8 font-bold">
+      <section className="py-12 md:py-20 bg-[#fb6f4c] text-black">
+        <div className="px-4 md:px-8 lg:px-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
             About me
           </h2>
-          <p className="text-lg md:text-xl font-open-sans max-w-4xl">
+          <p className="text-lg sm:text-xl md:text-2xl font-open-sans max-w-4xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -34,97 +34,184 @@ export default function Home() {
           </p>
         </div>
       </section>
+
       {/* Working Experience Section */}
-      <section className="py-20 bg-white text-black">
-        <div className="pl-8 md:pl-16 pr-8 md:pr-16">
-          <h2 className="text-4xl md:text-5xl font-open-sans mb-8 font-bold">
+      <section className="py-12 md:py-20 bg-white text-black">
+        <div className="px-4 md:px-8 lg:px-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
             Working Experience
           </h2>
-          <div>
-            <h3>Frontend Developer (internship)</h3>
-            <h4>AIMX | October 2024 - January 2025</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus ex incidunt sunt rem nostrum ut eveniet nemo inventore
-              laudantium explicabo?
-            </p>
+          <div className="mb-6 md:mb-8">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
+              Frontend Developer (internship)
+            </h3>
+            <h4 className="text-lg sm:text-xl md:text-2xl font-bold italic">
+              AIMX | October 2024 - January 2025
+            </h4>
+            <ul className="text-lg sm:text-xl md:text-2xl list-disc pl-4 md:pl-6">
+              <li>Built a workload function in Flutter</li>
+              <li>
+                Created a scheduled function that fetches Base64-encoded data
+                from an API once a day
+              </li>
+              <li>
+                Decoded data to Float32 format and converted it to CSV files
+              </li>
+              <li>Implemented database integration for data storage</li>
+            </ul>
           </div>
-          <div>
-            <h3>Frontend Developer </h3>
-            <h4>Adssets | May 2022 - January 2023</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus ex incidunt sunt rem nostrum ut eveniet nemo inventore
-              laudantium explicabo?
-            </p>
+          <div className="mb-6 md:mb-8">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
+              Frontend Developer
+            </h3>
+            <h4 className="text-lg sm:text-xl md:text-2xl font-bold italic">
+              Adssets | May 2022 - January 2023
+            </h4>
+            <ul className="text-lg sm:text-xl md:text-2xl list-disc pl-4 md:pl-6">
+              <li>
+                Created and updated banners using HTML, CSS, and JavaScript
+              </li>
+              <li>Managed database entries using MySQL Workbench</li>
+              <li>Conducted code reviews for colleagues' merge requests</li>
+              <li>Prepared and delivered presentations for clients</li>
+            </ul>
           </div>
-          <div>
-            <h3>Web Devleoper (internship)</h3>
-            <h4>Nordic Web Team | eptember 2021 - May 2022</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus ex incidunt sunt rem nostrum ut eveniet nemo inventore
-              laudantium explicabo?
-            </p>
+          <div className="mb-6 md:mb-8">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
+              Web Developer (internship)
+            </h3>
+            <h4 className="text-lg sm:text-xl md:text-2xl font-bold italic">
+              Nordic Web Team | September 2021 - May 2022
+            </h4>
+            <ul className="text-lg sm:text-xl md:text-2xl list-disc pl-4 md:pl-6">
+              <li>
+                Set up and developed headless frontends:
+                <ul className="list-disc pl-6">
+                  <li>PWA Studio and React.js with Magento 2 as the backend</li>
+                  <li>
+                    Vue.js and Nuxt.js with Storyblok or Shopware as the backend
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
+
       {/* Projects Section */}
-      <section className="py-20 bg-[#323131] text-white">
-        <div className="pl-8 md:pl-16 pr-8 md:pr-16">
-          <h2 className="text-4xl md:text-5xl font-open-sans mb-8 font-bold">
+      <section className="py-12 md:py-20 bg-[#323131] text-white">
+        <div className="px-4 md:px-8 lg:px-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
             Projects
           </h2>
         </div>
       </section>
+
       {/* Education Section */}
-      <section className="py-20 bg-[#fb6f4c] text-black">
-        <div className="pl-8 md:pl-16 pr-8 md:pr-16">
-          <h2 className="text-4xl md:text-5xl font-open-sans mb-8 font-bold">
+      <section className="py-12 md:py-20 bg-[#fb6f4c] text-black">
+        <div className="px-4 md:px-8 lg:px-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
             Education
           </h2>
-          <div>
-            <h3>Lexicon</h3>
-            <h4>IT-Professional - Continuing IT Education | 2024 -</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores
-              expedita eius quas possimus accusamus sunt asperiores non impedit
-              ipsum soluta.
-            </p>
+          <div className="mb-6 md:mb-8">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
+              Lexicon
+            </h3>
+            <h4 className="text-lg sm:text-xl md:text-2xl font-bold italic">
+              IT-Professional - Continuing IT Education | 2024
+            </h4>
+            <ul className="text-lg sm:text-xl md:text-2xl list-disc pl-4 md:pl-6">
+              <li>
+                Learned and applied HTML5, CSS, JavaScript, and React with
+                TypeScript
+              </li>
+              <li>
+                Completed both individual and group projects based on Figma
+                designs or predefined requirements
+              </li>
+              <li>
+                Built responsive user interfaces from scratch, with focus on
+                component-based architecture
+              </li>
+              <li>
+                Integrated REST APIs and worked with local storage for data
+                handling
+              </li>
+              <li>
+                Practiced agile methodologies including daily standups,
+                retrospectives, and sprint planning
+              </li>
+              <li>
+                Managed tasks using Trello and GitHub Projects, following a
+                structured backlog and to-do workflow
+              </li>
+            </ul>
           </div>
-          <div>
-            <h3>Fullstack Bootcamp, Salt</h3>
-            <h4>Fullstack Javascript Developer | 2023</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto
-              amet eos eius ab nisi obcaecati ut quia commodi adipisci fugiat.
-            </p>
+          <div className="mb-6 md:mb-8">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
+              Fullstack Bootcamp, Salt
+            </h3>
+            <h4 className="text-lg sm:text-xl md:text-2xl font-bold italic">
+              Fullstack Javascript Developer | 2023
+            </h4>
+            <ul className="text-lg sm:text-xl md:text-2xl list-disc pl-4 md:pl-6">
+              <li>
+                Mob programming with focus on:
+                <ul className="list-disc pl-6">
+                  <li>DOM manipulation</li>
+                  <li>Node.js and REST APIs</li>
+                  <li>Regular expressions</li>
+                  <li>Validation with Zod and Joi</li>
+                  <li>TypeScript</li>
+                  <li>Test-driven development (TDD) using Jest and Cypress</li>
+                </ul>
+              </li>
+            </ul>
           </div>
-          <div>
-            <h3>Medieinstitutet</h3>
-            <h4>E-commerce Web Development | 2020 - 2022</h4>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur
-              nobis alias recusandae accusamus ut aspernatur nesciunt animi esse
-              consectetur explicabo?
-            </p>
+          <div className="mb-6 md:mb-8">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
+              Medieinstitutet
+            </h3>
+            <h4 className="text-lg sm:text-xl md:text-2xl font-bold italic">
+              E-commerce Web Development | 2020-2022
+            </h4>
+            <ul className="text-lg sm:text-xl md:text-2xl list-disc pl-4 md:pl-6">
+              <li>
+                Trained in HTML, CSS, JavaScript, MySQL, PHP, React, and
+                WordPress with WooCommerce
+              </li>
+              <li>Worked with agile methodologies</li>
+              <li>
+                Integrated third-party services such as Firebase, Strapi, and
+                Stripe
+              </li>
+            </ul>
           </div>
-          <div>
-            <h3>Malmö Music Accademy</h3>
-            <h4>Mucisian, classical, vocals | 2016 - 2019</h4>
-            <p>Bechelor's degree in classical music, baritone</p>
+          <div className="mb-6 md:mb-8">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
+              Malmö Music Academy
+            </h3>
+            <h4 className="text-lg sm:text-xl md:text-2xl font-bold italic">
+              Musician, classical, vocals | 2016-2019
+            </h4>
+            <ul className="text-lg sm:text-xl md:text-2xl list-disc pl-4 md:pl-6">
+              <li>Bachelor's degree in classical music (baritone)</li>
+            </ul>
           </div>
         </div>
       </section>
+
       {/* Skills Section */}
-      <section className="py-20 bg-white text-black">
-        <div className="pl-8 md:pl-16 pr-8 md:pr-16">
-          <h2 className="text-4xl md:text-5xl font-open-sans mb-8 font-bold">
+      <section className="py-12 md:py-20 bg-white text-black">
+        <div className="px-4 md:px-8 lg:px-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
             Skills
           </h2>
           <div>
-            <h3>Main skills:</h3>
-            <ul>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
+              Main skills:
+            </h3>
+            <ul className="text-lg sm:text-xl md:text-2xl">
               <li>HTML</li>
               <li>CSS</li>
               <li>Javascript</li>
@@ -137,10 +224,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* Contact Section */}
-      <section className="py-20 bg-[#323131] text-white">
-        <div className="pl-8 md:pl-16 pr-8 md:pr-16">
-          <h2 className="text-4xl md:text-5xl font-open-sans mb-8 font-bold">
+      <section className="py-12 md:py-20 bg-[#323131] text-white">
+        <div className="px-4 md:px-8 lg:px-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
             Contact
           </h2>
           <div className="max-w-2xl mx-auto">
