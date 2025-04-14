@@ -9,12 +9,12 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="h-[40vh] flex flex-col items-start justify-start bg-[#323131] text-white relative">
-        <div className="pl-4 pt-4 md:pl-8 lg:pl-16 pr-4 md:pr-8 lg:pr-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-league-spartan mb-2 md:mb-4 font-bold whitespace-nowrap">
+        <div className="pl-4 pt-4 md:pl-8 lg:pl-16 pr-20 md:pr-24 lg:pr-32">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-league-spartan mb-2 md:mb-4 font-bold">
             <span className="inline-block">Rasmus</span>{" "}
             <span className="inline-block">Krogh-Andersen</span>
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-lato tracking-wider whitespace-nowrap">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-lato tracking-wider">
             <span className="inline-block">FRONTEND DEVELOPER</span> |{" "}
             <span className="inline-block">WEB DEVELOPER</span>
           </p>

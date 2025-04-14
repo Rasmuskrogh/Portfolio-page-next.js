@@ -10,8 +10,10 @@ export default function ContactForm() {
     email: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  // const [error, setError] = useState<string | null>(null);
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -21,16 +23,16 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    // setError(null);
+    setStatus("submitting");
+    setError(null);
 
     try {
       await sendEmail(formData);
       setFormData({ name: "", email: "", message: "" });
+      setStatus("success");
     } catch (err) {
-      // setError("Failed to send message. Please try again later.");
-    } finally {
-      setIsSubmitting(false);
+      setError("Failed to send message. Please try again later.");
+      setStatus("error");
     }
   };
 
@@ -79,10 +81,10 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        disabled={isSubmitting}
+        disabled={status === "submitting"}
         className="w-full bg-[#fb6f4c] text-white p-3 rounded font-lato text-lg hover:bg-[#fb6f4c]/90 transition-colors disabled:opacity-50"
       >
-        {isSubmitting ? "Sending..." : "Send"}
+        {status === "submitting" ? "Sending..." : "Send"}
       </button>
     </form>
   );
