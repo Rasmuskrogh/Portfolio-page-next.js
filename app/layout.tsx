@@ -36,7 +36,7 @@ export default async function RootLayout({
         <NextIntlClientProvider>
           <Header />
           <main className="flex-1">{children}</main>
-          <footer className="bg-gray-900 text-white py-4 text-center">
+          <footer className="bg-gray-900 text-white py-4 text-center text-sm md:text-base">
             © {new Date().getFullYear()} Rasmus Krogh-Andersen. All rights
             reserved.
           </footer>

@@ -10,7 +10,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="h-[40vh] flex flex-col items-start justify-start bg-[#323131] text-white relative">
         <div className="pl-4 pt-4 md:pl-8 lg:pl-16 pr-20 md:pr-24 lg:pr-32">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-league-spartan mb-2 md:mb-4 font-bold">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl pr-8 font-league-spartan mb-2 md:mb-4 font-bold">
             <span className="inline-block">Rasmus</span>{" "}
             <span className="inline-block">Krogh-Andersen</span>
           </h1>
@@ -273,6 +273,55 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <footer className="bg-gray-900 text-white py-8">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-lg md:text-xl font-bold mb-4">Kontakt</h3>
+              <p className="text-sm md:text-base">
+                <a
+                  href="mailto:johanna@johannasjoberg.se"
+                  className="hover:text-blue-400 transition"
+                >
+                  johanna@johannasjoberg.se
+                </a>
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg md:text-xl font-bold mb-4">
+                Sociala Medier
+              </h3>
+              <div className="flex space-x-4">
+                <a
+                  href="https://github.com/johannasjoberg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm md:text-base hover:text-blue-400 transition"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/johanna-sjoberg/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm md:text-base hover:text-blue-400 transition"
+                >
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-lg md:text-xl font-bold mb-4">
+                © 2024 Johanna Sjöberg
+              </h3>
+              <p className="text-xs md:text-sm text-gray-400">
+                All rights reserved
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
