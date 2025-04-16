@@ -1,20 +1,20 @@
-// import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import ContactForm from "@/components/ContactForm";
-// import { useTranslation } from "react-i18next";
+//import { useTranslation } from "react-i18next";
 
 export default function Home() {
-  // const t = useTranslations("Home");
+  const t = useTranslations("Home");
 
   return (
-    <main className="min-h-screen">
+    <main className="w-full">
       {/* Hero Section */}
       <section className="h-[40vh] flex flex-col items-start justify-start bg-[#323131] text-white relative">
-        <div className="pl-4 pt-4 md:pl-8 lg:pl-16 pr-20 md:pr-24 lg:pr-32">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl pr-8 font-league-spartan mb-2 md:mb-4 font-bold">
+        <div className="pl-4 pt-4 md:pl-8 lg:pl-16 pr-4 md:pr-8 lg:pr-16">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-league-spartan mb-2 pr-[6rem] md:mb-4 font-bold">
             <span className="inline-block">Rasmus</span>{" "}
             <span className="inline-block">Krogh-Andersen</span>
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-lato tracking-wider">
+          <p className="text-xl sm:text-2xl md:text-3xl font-lato tracking-wider">
             <span className="inline-block">FRONTEND DEVELOPER</span> |{" "}
             <span className="inline-block">WEB DEVELOPER</span>
           </p>
@@ -24,15 +24,29 @@ export default function Home() {
       {/* About Section */}
       <section className="py-12 md:py-20 bg-[#fb6f4c] text-black">
         <div className="px-4 md:px-8 lg:px-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
-            About me
-          </h2>
-          <p className="text-lg sm:text-xl md:text-2xl font-open-sans max-w-4xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
+          <div className="flex flex-col lg:flex-row md:flex-row items-start gap-8">
+            {/* Textdelen */}
+            <div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
+                About me
+              </h2>
+              <p className="text-lg sm:text-xl md:text-2xl font-open-sans">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+
+            {/* Bilden */}
+            <div className="w-60 h-60 rounded-full overflow-hidden shrink-0 self-center">
+              <img
+                src="/IMG_20211016_170425_Bokeh (1).jpg"
+                alt="Portrait of me"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -72,30 +86,9 @@ export default function Home() {
               <li>
                 Created and updated banners using HTML, CSS, and JavaScript
               </li>
-              <li>
-                Set up and developed headless frontends:
-                <ul className="list-disc pl-6">
-                  <li>WordPress with WooCommerce</li>
-                  <li>Shopify</li>
-                  <li>Magento</li>
-                </ul>
-              </li>
-              <li>
-                Built responsive user interfaces from scratch, with focus on
-                component-based architecture
-              </li>
-              <li>
-                Integrated REST APIs and worked with local storage for data
-                handling
-              </li>
-              <li>
-                Practiced agile methodologies including daily standups,
-                retrospectives, and sprint planning
-              </li>
-              <li>
-                Managed tasks using Trello and GitHub Projects, following a
-                structured backlog and to-do workflow
-              </li>
+              <li>Managed database entries using MySQL Workbench</li>
+              <li>Conducted code reviews for colleagues' merge requests</li>
+              <li>Prepared and delivered presentations for clients</li>
             </ul>
           </div>
           <div className="mb-6 md:mb-8">
@@ -109,26 +102,11 @@ export default function Home() {
               <li>
                 Set up and developed headless frontends:
                 <ul className="list-disc pl-6">
-                  <li>WordPress with WooCommerce</li>
-                  <li>Shopify</li>
-                  <li>Magento</li>
+                  <li>PWA Studio and React.js with Magento 2 as the backend</li>
+                  <li>
+                    Vue.js and Nuxt.js with Storyblok or Shopware as the backend
+                  </li>
                 </ul>
-              </li>
-              <li>
-                Built responsive user interfaces from scratch, with focus on
-                component-based architecture
-              </li>
-              <li>
-                Integrated REST APIs and worked with local storage for data
-                handling
-              </li>
-              <li>
-                Practiced agile methodologies including daily standups,
-                retrospectives, and sprint planning
-              </li>
-              <li>
-                Managed tasks using Trello and GitHub Projects, following a
-                structured backlog and to-do workflow
               </li>
             </ul>
           </div>
@@ -198,11 +176,11 @@ export default function Home() {
                   <li>DOM manipulation</li>
                   <li>Node.js and REST APIs</li>
                   <li>Regular expressions</li>
+                  <li>Validation with Zod and Joi</li>
+                  <li>TypeScript</li>
+                  <li>Test-driven development (TDD) using Jest and Cypress</li>
                 </ul>
               </li>
-              <li>Validation with Zod and Joi</li>
-              <li>TypeScript</li>
-              <li>Test-driven development (TDD) using Jest and Cypress</li>
             </ul>
           </div>
           <div className="mb-6 md:mb-8">
@@ -232,7 +210,7 @@ export default function Home() {
               Musician, classical, vocals | 2016-2019
             </h4>
             <ul className="text-lg sm:text-xl md:text-2xl list-disc pl-4 md:pl-6">
-              <li>Bachelor&apos;s degree in classical music (baritone)</li>
+              <li>Bachelor's degree in classical music (baritone)</li>
             </ul>
           </div>
         </div>
@@ -273,55 +251,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <footer className="bg-gray-900 text-white py-8">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-lg md:text-xl font-bold mb-4">Kontakt</h3>
-              <p className="text-sm md:text-base">
-                <a
-                  href="mailto:johanna@johannasjoberg.se"
-                  className="hover:text-blue-400 transition"
-                >
-                  johanna@johannasjoberg.se
-                </a>
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg md:text-xl font-bold mb-4">
-                Sociala Medier
-              </h3>
-              <div className="flex space-x-4">
-                <a
-                  href="https://github.com/johannasjoberg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm md:text-base hover:text-blue-400 transition"
-                >
-                  GitHub
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/johanna-sjoberg/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm md:text-base hover:text-blue-400 transition"
-                >
-                  LinkedIn
-                </a>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-lg md:text-xl font-bold mb-4">
-                © 2024 Johanna Sjöberg
-              </h3>
-              <p className="text-xs md:text-sm text-gray-400">
-                All rights reserved
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }
