@@ -13,7 +13,7 @@ export default function ProjectArrowWrapper() {
       setIsScrolled(window.scrollY > 0);
 
       // Hämta viewportens höjd
-      const viewportHeight = window.innerHeight;
+      //const viewportHeight = window.innerHeight;
 
       // Triangeln är fixed 280px från toppen
       const arrowTopOffset = 280;
