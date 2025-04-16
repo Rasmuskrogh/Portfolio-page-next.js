@@ -6,9 +6,25 @@ interface ProjectArrowProps {
 }
 
 export default function ProjectsArrow({ direction, color }: ProjectArrowProps) {
+  const handleClick = () => {
+    if (window.scrollY === 0) {
+      // Om vi är högst upp, scrolla till projects
+      const projectsSection = document.getElementById("projects");
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Om vi har scrollat, scrolla till toppen
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="fixed z-20 top-[280px] right-0 pr-8">
-      <div className="flex flex-row items-center gap-2 align-center">
+      <div
+        className="flex flex-row items-center gap-2 align-center cursor-pointer hover:opacity-80 transition-opacity"
+        onClick={handleClick}
+      >
         <h3
           className={`text-5xl self-center pb-2 font-semibold transition-opacity duration-300 text-white ${
             direction === "down" ? "opacity-0" : "opacity-100"
