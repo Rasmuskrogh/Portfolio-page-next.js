@@ -1,6 +1,8 @@
 //import { useTranslations } from "next-intl";
 import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
+import ProjectArrowWrapper from "@/components/ProjectArrowWrapper";
+
 //import { useTranslation } from "react-i18next";
 
 export default function Home() {
@@ -8,8 +10,12 @@ export default function Home() {
 
   return (
     <main className="w-full">
+      <ProjectArrowWrapper />
       {/* Hero Section */}
-      <section className="h-[40vh] flex flex-col items-start justify-start bg-[#323131] text-white relative">
+      <section
+        className="h-[40vh] flex flex-col items-start justify-start bg-[#323131] text-white relative"
+        data-color="dark"
+      >
         <div className="pl-4 pt-4 md:pl-8 lg:pl-16 pr-4 md:pr-8 lg:pr-16">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-league-spartan mb-2 pr-[6rem] md:mb-4 font-bold">
             <span className="inline-block">Rasmus</span>{" "}
@@ -23,7 +29,10 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-12 md:py-20 bg-[#fb6f4c] text-black">
+      <section
+        className="py-12 md:py-20 bg-[#fb6f4c] text-black"
+        data-color="white"
+      >
         <div className="px-4 md:px-8 lg:px-16">
           <div className="flex flex-col lg:flex-row md:flex-row items-start gap-8">
             {/* Textdelen */}
@@ -54,7 +63,10 @@ export default function Home() {
       </section>
 
       {/* Working Experience Section */}
-      <section className="py-12 md:py-20 bg-white text-black">
+      <section
+        className="py-12 md:py-20 bg-white text-black"
+        data-color="white"
+      >
         <div className="px-4 md:px-8 lg:px-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
             Working Experience
@@ -117,7 +129,11 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-12 md:py-20 bg-[#323131] text-white">
+      <section
+        id="projects"
+        className="py-12 md:py-20 bg-[#323131] text-white"
+        data-color="dark"
+      >
         <div className="px-4 md:px-8 lg:px-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
             Projects
@@ -126,7 +142,10 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section className="py-12 md:py-20 bg-[#fb6f4c] text-black">
+      <section
+        className="py-12 md:py-20 bg-[#fb6f4c] text-black"
+        data-color="white"
+      >
         <div className="px-4 md:px-8 lg:px-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
             Education
@@ -220,7 +239,10 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section className="py-12 md:py-20 bg-white text-black">
+      <section
+        className="py-12 md:py-20 bg-white text-black"
+        data-color="white"
+      >
         <div className="px-4 md:px-8 lg:px-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
             Skills
@@ -244,7 +266,10 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-12 md:py-20 bg-[#323131] text-white">
+      <section
+        className="py-12 md:py-20 bg-[#323131] text-white"
+        data-color="dark"
+      >
         <div className="px-4 md:px-8 lg:px-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
             Contact
