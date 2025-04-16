@@ -1,5 +1,6 @@
 //import { useTranslations } from "next-intl";
 import ContactForm from "@/components/ContactForm";
+import Image from "next/image";
 //import { useTranslation } from "react-i18next";
 
 export default function Home() {
@@ -40,10 +41,12 @@ export default function Home() {
 
             {/* Bilden */}
             <div className="w-60 h-60 rounded-full overflow-hidden shrink-0 self-center">
-              <img
+              <Image
                 src="/IMG_20211016_170425_Bokeh (1).jpg"
                 alt="Portrait of me"
                 className="w-full h-full object-cover"
+                width={240}
+                height={240}
               />
             </div>
           </div>
