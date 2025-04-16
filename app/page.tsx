@@ -1,9 +1,9 @@
-import { useTranslations } from "next-intl";
+//import { useTranslations } from "next-intl";
 import ContactForm from "@/components/ContactForm";
 //import { useTranslation } from "react-i18next";
 
 export default function Home() {
-  const t = useTranslations("Home");
+  /* const t = useTranslations("Home"); */
 
   return (
     <main className="w-full">
