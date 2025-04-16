@@ -90,7 +90,7 @@ export default function Home() {
                 Created and updated banners using HTML, CSS, and JavaScript
               </li>
               <li>Managed database entries using MySQL Workbench</li>
-              <li>Conducted code reviews for colleagues' merge requests</li>
+              <li>Conducted code reviews for colleagues merge requests</li>
               <li>Prepared and delivered presentations for clients</li>
             </ul>
           </div>
@@ -213,7 +213,7 @@ export default function Home() {
               Musician, classical, vocals | 2016-2019
             </h4>
             <ul className="text-lg sm:text-xl md:text-2xl list-disc pl-4 md:pl-6">
-              <li>Bachelor's degree in classical music (baritone)</li>
+              <li>Bachelor&apos;s degree in classical music (baritone)</li>
             </ul>
           </div>
         </div>
