@@ -1,11 +1,14 @@
 "use client";
 
 interface ProjectArrowProps {
-  direction: "up" | "down";
   color: "white" | "black";
+  isScrolled: boolean;
 }
 
-export default function ProjectsArrow({ direction, color }: ProjectArrowProps) {
+export default function ProjectsArrow({
+  color,
+  isScrolled,
+}: ProjectArrowProps) {
   const handleClick = () => {
     if (window.scrollY === 0) {
       // Om vi är högst upp, scrolla till projects
@@ -20,14 +23,21 @@ export default function ProjectsArrow({ direction, color }: ProjectArrowProps) {
   };
 
   return (
-    <div className="fixed z-20 top-[280px] right-0 pr-8">
+    <div
+      className="fixed right-0 pr-8 z-50 transition-all duration-300"
+      style={{
+        transform: isScrolled
+          ? `translateY(calc(100vh - 5rem))`
+          : "translateY(280px)",
+      }}
+    >
       <div
         className="flex flex-row items-center gap-2 align-center cursor-pointer hover:opacity-80 transition-opacity"
         onClick={handleClick}
       >
         <h3
           className={`text-5xl self-center pb-2 font-semibold transition-opacity duration-300 text-white ${
-            direction === "down" ? "opacity-0" : "opacity-100"
+            isScrolled ? "opacity-0" : "opacity-100"
           }`}
         >
           Projects
@@ -39,7 +49,7 @@ export default function ProjectsArrow({ direction, color }: ProjectArrowProps) {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className={`transition-all duration-300 ${
-            direction === "up" ? "rotate-180" : ""
+            !isScrolled ? "rotate-180" : ""
           }`}
         >
           <path

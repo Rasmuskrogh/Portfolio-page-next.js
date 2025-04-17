@@ -9,17 +9,14 @@ export default function ProjectArrowWrapper() {
 
   useEffect(() => {
     const handleScroll = () => {
+      const scrolled = window.scrollY > 0;
       // Invertera scroll-logiken - peka uppåt när man scrollar ner
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(scrolled);
 
-      // Hämta viewportens höjd
-      //const viewportHeight = window.innerHeight;
-
-      // Triangeln är fixed 280px från toppen
-      const arrowTopOffset = 280;
-
-      // Beräkna var triangeln befinner sig på sidan
-      const arrowPosition = window.scrollY + arrowTopOffset;
+      // Beräkna triangeln's position baserat på scroll och transform
+      const arrowPosition = scrolled
+        ? window.scrollY + window.innerHeight - 5 * 16 // 5rem i pixlar
+        : window.scrollY + 280; // 280px från toppen
 
       // Definiera färgerna och deras gränser
       const sections = [
@@ -60,12 +57,5 @@ export default function ProjectArrowWrapper() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
-    <div className="fixed top-[280px] right-8 z-50 project-arrow">
-      <ProjectsArrow
-        direction={isScrolled ? "down" : "up"}
-        color={currentColor}
-      />
-    </div>
-  );
+  return <ProjectsArrow color={currentColor} isScrolled={isScrolled} />;
 }
