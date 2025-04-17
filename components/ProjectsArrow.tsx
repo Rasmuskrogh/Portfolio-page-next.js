@@ -24,7 +24,7 @@ export default function ProjectsArrow({
 
   return (
     <div
-      className="fixed right-0 pr-8 z-50 transition-all duration-300"
+      className="fixed right-0 pr-8 z-50 transition-all duration-500"
       style={{
         transform: isScrolled
           ? `translateY(calc(100vh - 5rem))`
