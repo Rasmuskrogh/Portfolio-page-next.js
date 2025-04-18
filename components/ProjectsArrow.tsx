@@ -24,10 +24,10 @@ export default function ProjectsArrow({
 
   return (
     <div
-      className="fixed right-0 pr-8 z-50 transition-all duration-500"
+      className="fixed right-0 pr-8 z-50 transition-all duration-700"
       style={{
         transform: isScrolled
-          ? `translateY(calc(100vh - 5rem))`
+          ? `translateY(calc(100vh - 5.3rem))`
           : "translateY(280px)",
       }}
     >
@@ -36,19 +36,19 @@ export default function ProjectsArrow({
         onClick={handleClick}
       >
         <h3
-          className={`text-5xl self-center pb-2 font-semibold transition-opacity duration-300 text-white ${
+          className={`text-3xl md:text-4xl lg:text-5xl self-center pb-2 font-semibold transition-opacity duration-300 text-white ${
             isScrolled ? "opacity-0" : "opacity-100"
           }`}
         >
           Projects
         </h3>
         <svg
-          width="40"
-          height="40"
+          width="32"
+          height="32"
           viewBox="0 0 40 40"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className={`transition-all duration-300 ${
+          className={`transition-all duration-300 md:w-10 md:h-10 lg:w-12 lg:h-12 ${
             !isScrolled ? "rotate-180" : ""
           }`}
         >
