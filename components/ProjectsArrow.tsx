@@ -46,13 +46,13 @@ export default function ProjectsArrow({
         md:[transform:translateY(calc(50vh-12rem))]
         lg:[transform:translateY(calc(50vh-14rem))]
         xl:[transform:translateY(calc(50vh-10rem))]
-        [&.scrolled]:[transform:translateY(calc(100vh-5.3rem))]"
+        [&.scrolled]:[transform:translateY(calc(100vh-8rem))]
+        sm:[&.scrolled]:[transform:translateY(calc(100vh-5.3rem))]
+        md:[&.scrolled]:[transform:translateY(calc(100vh-5.3rem))]
+        lg:[&.scrolled]:[transform:translateY(calc(100vh-5.3rem))]
+        xl:[&.scrolled]:[transform:translateY(calc(100vh-5.3rem))]"
       style={{
-        transform: isScrolled
-          ? isScrollingUp
-            ? `translateY(calc(100vh - 8rem))` // Mer marginal när man scrollar uppåt
-            : `translateY(calc(100vh - 5.3rem))` // Normal marginal när man scrollar neråt
-          : undefined,
+        transform: isScrolled ? `translateY(calc(100vh - 5.3rem))` : undefined,
       }}
     >
       <div
