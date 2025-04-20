@@ -24,12 +24,15 @@ export default function ProjectsArrow({
 
   return (
     <div
-      className="fixed right-0 pr-8 z-50 transition-all duration-700"
+      className="fixed right-0 pr-8 z-50 transition-all duration-700
+        [transform:translateY(calc(50vh-10rem))]
+        sm:[transform:translateY(calc(50vh-9rem))]
+        md:[transform:translateY(calc(50vh-12rem))]
+        lg:[transform:translateY(calc(50vh-14rem))]
+        xl:[transform:translateY(calc(50vh-10rem))]
+        [&.scrolled]:[transform:translateY(calc(100vh-5.3rem))]"
       style={{
-        transform: isScrolled
-          ? `translateY(calc(100dvh - 5.3rem - env(safe-area-inset-bottom, 0px)))`
-          : `translateY(calc(280px + env(safe-area-inset-top, 0px)))`,
-        right: "env(safe-area-inset-right, 2rem)",
+        transform: isScrolled ? `translateY(calc(100vh - 5.3rem))` : undefined,
       }}
     >
       <div
