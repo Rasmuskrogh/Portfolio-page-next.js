@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi"; // Ikoner för hamburgermeny
 import NavLinks from "@/components/NavLinks";
@@ -7,8 +8,6 @@ import LanguageSwitcher from "./LanguageSwitcher";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
-  const [isOpening, setIsOpening] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,27 +19,11 @@ const Header = () => {
   }, []);
 
   const toggleMenu = () => {
-    if (!isMenuOpen) {
-      setIsOpening(true);
-      setIsMenuOpen(true);
-      setTimeout(() => {
-        setIsOpening(false);
-      }, 300);
-    } else {
-      setIsClosing(true);
-      setTimeout(() => {
-        setIsMenuOpen(false);
-        setIsClosing(false);
-      }, 300);
-    }
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const closeMenu = () => {
-    setIsClosing(true);
-    setTimeout(() => {
-      setIsMenuOpen(false);
-      setIsClosing(false);
-    }, 300);
+    setIsMenuOpen(false);
   };
 
   return (
@@ -72,25 +55,28 @@ const Header = () => {
       </div>
 
       {/* Menu Overlay */}
-      {(isMenuOpen || isClosing) && (
+      {isMenuOpen && (
         <div
-          className={`fixed inset-0 bg-black/90 backdrop-blur-sm transition-all duration-300 ${
-            isClosing ? "opacity-0" : isOpening ? "opacity-0" : "opacity-100"
-          }`}
+          className="fixed inset-0 bg-black/90 backdrop-blur-sm z-40"
           onClick={closeMenu}
         >
-          <div
-            className="absolute inset-0 flex flex-col items-center justify-center space-y-8 z-10"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
             <button
-              onClick={closeMenu}
+              onClick={(e) => {
+                e.stopPropagation();
+                closeMenu();
+              }}
               className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
               aria-label="Close menu"
             >
               <FiX size={28} />
             </button>
-            <NavLinks />
+            <div
+              className="flex flex-col items-center space-y-8"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <NavLinks onClose={closeMenu} />
+            </div>
           </div>
         </div>
       )}

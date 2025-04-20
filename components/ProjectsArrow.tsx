@@ -24,7 +24,7 @@ export default function ProjectsArrow({
 
   return (
     <div
-      className="fixed right-0 pr-8 z-50 transition-all duration-700
+      className="fixed right-0 pr-8 z-10 transition-all duration-700
         [transform:translateY(calc(50vh-10rem))]
         sm:[transform:translateY(calc(50vh-9rem))]
         md:[transform:translateY(calc(50vh-12rem))]
