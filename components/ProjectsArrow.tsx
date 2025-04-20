@@ -1,5 +1,7 @@
 "use client";
 
+import { useState, useEffect } from "react";
+
 interface ProjectArrowProps {
   color: "white" | "black";
   isScrolled: boolean;
@@ -9,6 +11,20 @@ export default function ProjectsArrow({
   color,
   isScrolled,
 }: ProjectArrowProps) {
+  const [isScrollingUp, setIsScrollingUp] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrollingUp(currentScrollY < lastScrollY);
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   const handleClick = () => {
     if (window.scrollY === 0) {
       // Om vi är högst upp, scrolla till projects
@@ -30,9 +46,13 @@ export default function ProjectsArrow({
         md:[transform:translateY(calc(50vh-12rem))]
         lg:[transform:translateY(calc(50vh-14rem))]
         xl:[transform:translateY(calc(50vh-10rem))]
-        [&.scrolled]:[transform:translateY(calc(100vh-8rem))]"
+        [&.scrolled]:[transform:translateY(calc(100vh-5.3rem))]"
       style={{
-        transform: isScrolled ? `translateY(calc(100vh - 8rem))` : undefined,
+        transform: isScrolled
+          ? isScrollingUp
+            ? `translateY(calc(100vh - 8rem))` // Mer marginal när man scrollar uppåt
+            : `translateY(calc(100vh - 5.3rem))` // Normal marginal när man scrollar neråt
+          : undefined,
       }}
     >
       <div
