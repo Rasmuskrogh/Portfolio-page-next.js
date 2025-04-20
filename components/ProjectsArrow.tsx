@@ -46,13 +46,19 @@ export default function ProjectsArrow({
         md:[transform:translateY(calc(50vh-12rem))]
         lg:[transform:translateY(calc(50vh-14rem))]
         xl:[transform:translateY(calc(50vh-10rem))]
-        [&.scrolled]:[transform:translateY(calc(100vh-8rem))]
+        [&.scrolled]:[transform:translateY(calc(100vh-5.3rem))]
         sm:[&.scrolled]:[transform:translateY(calc(100vh-5.3rem))]
         md:[&.scrolled]:[transform:translateY(calc(100vh-5.3rem))]
         lg:[&.scrolled]:[transform:translateY(calc(100vh-5.3rem))]
         xl:[&.scrolled]:[transform:translateY(calc(100vh-5.3rem))]"
       style={{
-        transform: isScrolled ? `translateY(calc(100vh - 5.3rem))` : undefined,
+        transform: isScrolled
+          ? window.innerWidth < 1024
+            ? isScrollingUp
+              ? `translateY(calc(100vh - 8rem))` // Mer marginal när man scrollar uppåt på mobil
+              : `translateY(calc(100vh - 5.3rem))` // Normal marginal när man scrollar neråt på mobil
+            : `translateY(calc(100vh - 5.3rem))` // Samma marginal på desktop oavsett riktning
+          : undefined,
       }}
     >
       <div
