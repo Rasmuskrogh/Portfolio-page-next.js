@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
 interface ProjectArrowProps {
   color: "white" | "black";
   isScrolled: boolean;
