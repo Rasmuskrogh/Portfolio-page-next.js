@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+
 interface ProjectArrowProps {
   color: "white" | "black";
   isScrolled: boolean;
@@ -30,9 +32,9 @@ export default function ProjectsArrow({
         md:[transform:translateY(calc(50vh-12rem))]
         lg:[transform:translateY(calc(50vh-14rem))]
         xl:[transform:translateY(calc(50vh-10rem))]
-        [&.scrolled]:[transform:translateY(calc(100vh-6.5rem))]"
+        [&.scrolled]:[transform:translateY(calc(100vh-8rem))]"
       style={{
-        transform: isScrolled ? `translateY(calc(100vh - 6.5rem))` : undefined,
+        transform: isScrolled ? `translateY(calc(100vh - 8rem))` : undefined,
       }}
     >
       <div
