@@ -27,8 +27,9 @@ export default function ProjectsArrow({
       className="fixed right-0 pr-8 z-50 transition-all duration-700"
       style={{
         transform: isScrolled
-          ? `translateY(calc(100vh - 5.3rem))`
-          : "translateY(280px)",
+          ? `translateY(calc(100dvh - 5.3rem - env(safe-area-inset-bottom, 0px)))`
+          : `translateY(calc(280px + env(safe-area-inset-top, 0px)))`,
+        right: "env(safe-area-inset-right, 2rem)",
       }}
     >
       <div
