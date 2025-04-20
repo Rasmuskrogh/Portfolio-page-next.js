@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 interface ProjectArrowProps {
   color: "white" | "black";
   isScrolled: boolean;
@@ -9,6 +11,20 @@ export default function ProjectsArrow({
   color,
   isScrolled,
 }: ProjectArrowProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if we're on a mobile device
+    const checkMobile = () => {
+      setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const handleClick = () => {
     if (window.scrollY === 0) {
       // Om vi är högst upp, scrolla till projects
