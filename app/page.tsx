@@ -2,6 +2,7 @@
 import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
 import ProjectArrowWrapper from "@/components/ProjectArrowWrapper";
+import Link from "next/link";
 
 //import { useTranslation } from "react-i18next";
 
@@ -41,11 +42,27 @@ export default function Home() {
                 About me
               </h2>
               <p className="text-lg sm:text-xl md:text-2xl font-open-sans">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                Hi! I'm a former classical singer turned web developer. My
+                expertise lies in frontend, especially TypeScript, React and
+                Next.js, However, my{" "}
+                <span>
+                  <Link className="underline" href="/skills">
+                    tech stack
+                  </Link>
+                </span>{" "}
+                extends beyond those frameworks. My favourite part of coding is
+                figuring out effective solutions to a big problems and then
+                seeing my creation come to life. Others have described me as:
+                adaptable, analytical, level headed, passionate and quick to
+                learn.{" "}
               </p>
+              <p className="text-lg sm:text-xl md:text-2xl font-open-sans pt-4">
+                Please reach out if you would like to chat code (or jobs!).
+              </p>
+
+              <span className="flex gap-10 pt-2 justify-center italic underline">
+                <Link href="/">Github</Link> <Link href="/">LinkedIn</Link>
+              </span>
             </div>
 
             {/* Bilden */}
