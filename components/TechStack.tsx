@@ -19,6 +19,7 @@ import {
   SiCss3,
   SiVuedotjs,
   SiNuxtdotjs,
+  SiOpenai,
 } from "react-icons/si";
 
 const TechStack = (): JSX.Element => {
@@ -30,27 +31,27 @@ const TechStack = (): JSX.Element => {
         {
           name: "Next.js",
           icon: <SiNextdotjs className="w-8 h-8 text-black" />,
-          level: "Expert",
+          level: "good",
         },
         {
           name: "React",
           icon: <FaReact className="w-8 h-8 text-[#61DAFB]" />,
-          level: "Expert",
+          level: "advanced",
         },
         {
           name: "TypeScript",
           icon: <SiTypescript className="w-8 h-8 text-[#3178C6]" />,
-          level: "Expert",
+          level: "good",
         },
         {
           name: "Supabase",
           icon: <SiSupabase className="w-8 h-8 text-[#3ECF8E]" />,
-          level: "Expert",
+          level: "good",
         },
         {
           name: "PostgreSQL",
           icon: <SiPostgresql className="w-8 h-8 text-[#4169E1]" />,
-          level: "Expert",
+          level: "good",
         },
       ],
     },
@@ -61,27 +62,27 @@ const TechStack = (): JSX.Element => {
         {
           name: "Vue.js",
           icon: <SiVuedotjs className="w-8 h-8 text-[#4FC08D]" />,
-          level: "Intermediate",
+          level: "profficient",
         },
         {
           name: "Nuxt.js",
           icon: <SiNuxtdotjs className="w-8 h-8 text-[#00DC82]" />,
-          level: "Intermediate",
+          level: "profficient",
         },
         {
           name: "JavaScript",
           icon: <SiJavascript className="w-8 h-8 text-[#F7DF1E]" />,
-          level: "Expert",
+          level: "advanced",
         },
         {
           name: "HTML5",
           icon: <SiHtml5 className="w-8 h-8 text-[#E34F26]" />,
-          level: "Expert",
+          level: "advanced",
         },
         {
           name: "CSS3",
           icon: <SiCss3 className="w-8 h-8 text-[#1572B6]" />,
-          level: "Expert",
+          level: "advanced",
         },
       ],
     },
@@ -92,27 +93,27 @@ const TechStack = (): JSX.Element => {
         {
           name: "Strapi",
           icon: <SiStrapi className="w-8 h-8 text-[#2F2E8B]" />,
-          level: "Expert",
+          level: "good",
         },
         {
           name: "Node.js",
           icon: <FaNodeJs className="w-8 h-8 text-[#339933]" />,
-          level: "Intermediate",
+          level: "profficient",
         },
         {
           name: "Express",
           icon: <SiExpress className="w-8 h-8 text-black" />,
-          level: "Intermediate",
+          level: "profficient",
         },
         {
           name: "Magento",
           icon: <SiMagento className="w-8 h-8 text-[#EE672F]" />,
-          level: "Intermediate",
+          level: "basic",
         },
         {
           name: "Storyblok",
           icon: <SiStoryblok className="w-8 h-8 text-[#09B3AF]" />,
-          level: "Intermediate",
+          level: "basic",
         },
       ],
     },
@@ -123,17 +124,40 @@ const TechStack = (): JSX.Element => {
         {
           name: "MySQL",
           icon: <SiMysql className="w-8 h-8 text-[#4479A1]" />,
-          level: "Intermediate",
+          level: "profficient",
         },
         {
           name: "SQLite",
           icon: <SiSqlite className="w-8 h-8 text-[#003B57]" />,
-          level: "Intermediate",
+          level: "basic",
         },
         {
           name: "Git",
           icon: <FaGitAlt className="w-8 h-8 text-[#F05032]" />,
-          level: "Expert",
+          level: "advanced",
+        },
+        {
+          name: "ChatGPT",
+          icon: <SiOpenai className="w-8 h-8 text-[#74AA9C]" />,
+          level: "none",
+        },
+        {
+          name: "Cursor",
+          icon: (
+            <svg
+              className="w-8 h-8"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M12 2L2 7v10l10 5 10-5V7L12 2z" fill="#000000" />
+              <path d="M12 4L4 8v8l8 4 8-4V8l-8-4z" fill="#FFFFFF" />
+              <path d="M12 6L6 9v6l6 3 6-3V9l-6-3z" fill="#808080" />
+              <path d="M12 8l-2 1v2l2 1 2-1V9l-2-1z" fill="#000000" />
+              <path d="M12 10l-1 0.5v1l1 0.5 1-0.5v-1l-1-0.5z" fill="#FFFFFF" />
+            </svg>
+          ),
+          level: "none",
         },
       ],
     },
@@ -175,17 +199,23 @@ const TechStack = (): JSX.Element => {
                     <div className="flex-1">
                       <div className="flex justify-between items-center">
                         <span className="text-black">{item.name}</span>
-                        <span
-                          className={`text-xs px-2 py-1 rounded-full ${
-                            item.level === "Expert"
-                              ? "bg-green-500/20 text-green-600"
-                              : item.level === "Intermediate"
-                              ? "bg-yellow-500/20 text-yellow-600"
-                              : "bg-gray-500/20 text-gray-600"
-                          }`}
-                        >
-                          {item.level}
-                        </span>
+                        {item.level !== "none" && (
+                          <span
+                            className={`text-xs px-2 py-1 rounded-full ${
+                              item.level === "advanced"
+                                ? "bg-green-500/20 text-green-600"
+                                : item.level === "good"
+                                ? "bg-teal-500/20 text-teal-600"
+                                : item.level === "profficient"
+                                ? "bg-yellow-500/20 text-yellow-600"
+                                : item.level === "basic"
+                                ? "bg-orange-500/20 text-orange-600"
+                                : "bg-red-500/20 text-red-600"
+                            }`}
+                          >
+                            {item.level}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>

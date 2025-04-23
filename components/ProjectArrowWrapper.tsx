@@ -24,13 +24,14 @@ export default function ProjectArrowWrapper() {
 
       let currentEnd = 0;
       allSections.forEach((section) => {
-        const height = section.getBoundingClientRect().height;
-        currentEnd += height;
+        const rect = section.getBoundingClientRect();
+        const start = rect.top + window.scrollY;
+        const end = start + rect.height;
         // Get the color from data-color attribute, default to "white" if not set
         const color = (
           section.getAttribute("data-color") === "dark" ? "white" : "black"
         ) as "white" | "black";
-        sections.push({ color, end: currentEnd });
+        sections.push({ color, end });
       });
 
       // Find which section the arrow is in
