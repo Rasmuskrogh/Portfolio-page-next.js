@@ -22,7 +22,6 @@ export default function ProjectArrowWrapper() {
       const allSections = document.querySelectorAll("section");
       const sections: { color: "white" | "black"; end: number }[] = [];
 
-      let currentEnd = 0;
       allSections.forEach((section) => {
         const rect = section.getBoundingClientRect();
         const start = rect.top + window.scrollY;
