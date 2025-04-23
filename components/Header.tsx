@@ -57,16 +57,17 @@ const Header = () => {
       {/* Menu Overlay */}
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-black/90 backdrop-blur-sm z-40"
+          className="fixed top-0 left-0 w-full h-screen bg-black/90 backdrop-blur-sm z-[100]"
           onClick={closeMenu}
+          style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0 }}
         >
-          <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <div className="fixed inset-0 flex flex-col items-center justify-center">
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 closeMenu();
               }}
-              className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+              className="fixed top-4 right-4 text-white hover:text-gray-300 transition-colors"
               aria-label="Close menu"
             >
               <FiX size={28} />

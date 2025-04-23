@@ -18,31 +18,26 @@ export default function ProjectArrowWrapper() {
         ? window.scrollY + window.innerHeight - 5 * 16 // 5rem i pixlar
         : window.scrollY + 280; // 280px från toppen
 
-      // Definiera färgerna och deras gränser
-      const sections = [
-        { color: "white", end: 0 }, // Hero
-        { color: "black", end: 0 }, // About
-        { color: "black", end: 0 }, // Working Experience
-        { color: "white", end: 0 }, // Projects
-        { color: "black", end: 0 }, // Education
-        { color: "black", end: 0 }, // Skills
-        { color: "white", end: 0 }, // Contact
-      ];
-
-      // Beräkna var varje sektion slutar
+      // Get all sections and their colors
       const allSections = document.querySelectorAll("section");
-      let currentEnd = 0;
+      const sections: { color: "white" | "black"; end: number }[] = [];
 
-      allSections.forEach((section, index) => {
-        currentEnd += section.getBoundingClientRect().height;
-        sections[index].end = currentEnd;
+      let currentEnd = 0;
+      allSections.forEach((section) => {
+        const height = section.getBoundingClientRect().height;
+        currentEnd += height;
+        // Get the color from data-color attribute, default to "white" if not set
+        const color = (
+          section.getAttribute("data-color") === "dark" ? "white" : "black"
+        ) as "white" | "black";
+        sections.push({ color, end: currentEnd });
       });
 
-      // Hitta vilken sektion triangeln befinner sig i
+      // Find which section the arrow is in
       let newColor: "white" | "black" = "white";
-      for (let i = 0; i < sections.length; i++) {
-        if (arrowPosition <= sections[i].end) {
-          newColor = sections[i].color as "white" | "black";
+      for (const section of sections) {
+        if (arrowPosition <= section.end) {
+          newColor = section.color;
           break;
         }
       }

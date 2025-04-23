@@ -2,8 +2,11 @@
 import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
 import ProjectArrowWrapper from "@/components/ProjectArrowWrapper";
-import Link from "next/link";
+// import Link from "next/link";
 import { supabase } from "@/lib/supabase";
+import ProjectCard from "@/components/ProjectCard";
+import TechStackLink from "@/components/TechStackLink";
+import TechStack from "@/components/TechStack";
 
 interface Project {
   id: string;
@@ -49,6 +52,7 @@ export default async function Home() {
 
       {/* About Section */}
       <section
+        id="about"
         className="py-12 md:py-20 bg-[#fb6f4c] text-black"
         data-color="white"
       >
@@ -62,24 +66,31 @@ export default async function Home() {
               <p className="text-lg sm:text-xl md:text-2xl font-open-sans">
                 Hi! I&apos;m a former classical singer turned web developer. My
                 expertise lies in frontend, especially TypeScript, React and
-                Next.js, However, my{" "}
-                <span>
-                  <Link className="underline" href="/skills">
-                    tech stack
-                  </Link>
-                </span>{" "}
-                extends beyond those frameworks. My favourite part of coding is
-                figuring out effective solutions to a big problems and then
-                seeing my creation come to life. Others have described me as:
-                adaptable, analytical, level headed, passionate and quick to
-                learn.{" "}
+                Next.js, However, my <TechStackLink /> extends beyond those
+                frameworks. My favourite part of coding is figuring out
+                effective solutions to a big problems and then seeing my
+                creation come to life. Others have described me as: adaptable,
+                analytical, level headed, passionate and quick to learn.{" "}
               </p>
               <p className="text-lg sm:text-xl md:text-2xl font-open-sans pt-4">
                 Please reach out if you would like to chat code (or jobs!).
               </p>
 
               <span className="flex gap-10 pt-2 justify-center italic underline">
-                <Link href="/">Github</Link> <Link href="/">LinkedIn</Link>
+                <a
+                  href="https://github.com/rasmuskrogh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Github
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/rasmus-krogh-andersen-7b4a421b9/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
               </span>
             </div>
 
@@ -99,6 +110,7 @@ export default async function Home() {
 
       {/* Working Experience Section */}
       <section
+        id="experience"
         className="py-12 md:py-20 bg-white text-black"
         data-color="white"
       >
@@ -179,30 +191,7 @@ export default async function Home() {
             {projects
               ?.filter((project) => project.priority === 1)
               .map((project) => (
-                <div
-                  key={project.id}
-                  className="group bg-white/10 rounded-lg shadow-lg overflow-hidden border border-gray-200/20 transition-transform transform hover:scale-[1.02] hover:shadow-xl h-[500px] md:h-[600px]"
-                >
-                  <div className="p-8 h-full flex flex-col">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white mb-4">
-                      {project.title}
-                    </h2>
-                    <div className="flex-1 flex items-center justify-center bg-white/5 rounded-lg mb-6">
-                      {/* Placeholder for future image */}
-                      <div className="text-gray-400">Image coming soon</div>
-                    </div>
-                    <div className="flex justify-end">
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="border border-[#fb6f4c] bg-[#fb6f4c] font-semibold text-black px-6 py-3 rounded-md hover:bg-[#fb6f4c]/80 transition"
-                      >
-                        Visit
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <ProjectCard key={project.id} project={project} />
               ))}
           </div>
 
@@ -211,30 +200,7 @@ export default async function Home() {
             {projects
               ?.filter((project) => project.priority === 2)
               .map((project) => (
-                <div
-                  key={project.id}
-                  className="group bg-white/10 rounded-lg shadow-lg overflow-hidden border border-gray-200/20 transition-transform transform hover:scale-[1.02] hover:shadow-xl flex flex-col h-[400px] md:h-[500px]"
-                >
-                  <div className="flex-1 p-6 flex flex-col">
-                    <h2 className="text-xl md:text-2xl font-semibold text-white mb-2">
-                      {project.title}
-                    </h2>
-                    <div className="flex-1 flex items-center justify-center bg-white/5 rounded-lg mb-4">
-                      {/* Placeholder for future image */}
-                      <div className="text-gray-400">Image coming soon</div>
-                    </div>
-                    <div className="flex gap-4 p-6 bg-white/5">
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full text-center border font-semibold border-[#fb6f4c] bg-[#fb6f4c] text-black px-4 py-2 rounded-md hover:bg-[#fb6f4c]/80 transition"
-                      >
-                        Visit
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <ProjectCard key={project.id} project={project} />
               ))}
           </div>
 
@@ -243,30 +209,7 @@ export default async function Home() {
             {projects
               ?.filter((project) => project.priority === 3)
               .map((project) => (
-                <div
-                  key={project.id}
-                  className="group bg-white/10 rounded-lg shadow-lg overflow-hidden border border-gray-200/20 transition-transform transform hover:scale-[1.02] hover:shadow-xl flex flex-col h-[350px] md:h-[400px]"
-                >
-                  <div className="flex-1 p-6 flex flex-col">
-                    <h2 className="text-xl font-semibold text-white mb-2">
-                      {project.title}
-                    </h2>
-                    <div className="flex-1 flex items-center justify-center bg-white/5 rounded-lg mb-4">
-                      {/* Placeholder for future image */}
-                      <div className="text-gray-400">Image coming soon</div>
-                    </div>
-                    <div className="flex gap-4 p-6 bg-white/5">
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full text-center border font-semibold border-[#fb6f4c] bg-[#fb6f4c] text-black px-4 py-2 rounded-md hover:bg-[#fb6f4c]/80 transition"
-                      >
-                        Visit
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <ProjectCard key={project.id} project={project} />
               ))}
           </div>
         </div>
@@ -274,6 +217,7 @@ export default async function Home() {
 
       {/* Education Section */}
       <section
+        id="education"
         className="py-12 md:py-20 bg-[#fb6f4c] text-black"
         data-color="white"
       >
@@ -371,33 +315,16 @@ export default async function Home() {
 
       {/* Skills Section */}
       <section
+        id="techstack"
         className="py-12 md:py-20 bg-white text-black"
         data-color="white"
       >
-        <div className="px-4 md:px-8 lg:px-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
-            Skills
-          </h2>
-          <div>
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
-              Main skills:
-            </h3>
-            <ul className="text-lg sm:text-xl md:text-2xl">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Javascript</li>
-              <li>React</li>
-              <li>Next.js</li>
-              <li>Typescript</li>
-              <li>PostgreSQL</li>
-              <li>Git</li>
-            </ul>
-          </div>
-        </div>
+        <TechStack />
       </section>
 
       {/* Contact Section */}
       <section
+        id="contact"
         className="py-12 md:py-20 bg-[#323131] text-white"
         data-color="dark"
       >
