@@ -3,11 +3,29 @@ import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
 import ProjectArrowWrapper from "@/components/ProjectArrowWrapper";
 import Link from "next/link";
+import { supabase } from "@/lib/supabase";
+
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  link: string;
+  priority: number;
+}
 
 //import { useTranslation } from "react-i18next";
 
-export default function Home() {
+export default async function Home() {
   /* const t = useTranslations("Home"); */
+  const { data: projects, error } = await supabase
+    .from("Projects")
+    .select("*")
+    .returns<Project[]>();
+
+  if (error) {
+    console.error("Error fetching projects:", error.message);
+    return <p>Det gick inte att ladda projekten.</p>;
+  }
 
   return (
     <main className="w-full">
@@ -42,7 +60,7 @@ export default function Home() {
                 About me
               </h2>
               <p className="text-lg sm:text-xl md:text-2xl font-open-sans">
-                Hi! I'm a former classical singer turned web developer. My
+                Hi! I&apos;m a former classical singer turned web developer. My
                 expertise lies in frontend, especially TypeScript, React and
                 Next.js, However, my{" "}
                 <span>
@@ -155,6 +173,102 @@ export default function Home() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
             Projects
           </h2>
+
+          {/* Priority 1 Project */}
+          <div className="mb-12">
+            {projects
+              ?.filter((project) => project.priority === 1)
+              .map((project) => (
+                <div
+                  key={project.id}
+                  className="group bg-white/10 rounded-lg shadow-lg overflow-hidden border border-gray-200/20 transition-transform transform hover:scale-[1.02] hover:shadow-xl h-[500px] md:h-[600px]"
+                >
+                  <div className="p-8 h-full flex flex-col">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white mb-4">
+                      {project.title}
+                    </h2>
+                    <div className="flex-1 flex items-center justify-center bg-white/5 rounded-lg mb-6">
+                      {/* Placeholder for future image */}
+                      <div className="text-gray-400">Image coming soon</div>
+                    </div>
+                    <div className="flex justify-end">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="border border-[#fb6f4c] bg-[#fb6f4c] font-semibold text-black px-6 py-3 rounded-md hover:bg-[#fb6f4c]/80 transition"
+                      >
+                        Visit
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+
+          {/* Priority 2 Projects */}
+          <div className="grid gap-8 sm:grid-cols-2 mb-12">
+            {projects
+              ?.filter((project) => project.priority === 2)
+              .map((project) => (
+                <div
+                  key={project.id}
+                  className="group bg-white/10 rounded-lg shadow-lg overflow-hidden border border-gray-200/20 transition-transform transform hover:scale-[1.02] hover:shadow-xl flex flex-col h-[400px] md:h-[500px]"
+                >
+                  <div className="flex-1 p-6 flex flex-col">
+                    <h2 className="text-xl md:text-2xl font-semibold text-white mb-2">
+                      {project.title}
+                    </h2>
+                    <div className="flex-1 flex items-center justify-center bg-white/5 rounded-lg mb-4">
+                      {/* Placeholder for future image */}
+                      <div className="text-gray-400">Image coming soon</div>
+                    </div>
+                    <div className="flex gap-4 p-6 bg-white/5">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full text-center border font-semibold border-[#fb6f4c] bg-[#fb6f4c] text-black px-4 py-2 rounded-md hover:bg-[#fb6f4c]/80 transition"
+                      >
+                        Visit
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+
+          {/* Priority 3 Projects */}
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {projects
+              ?.filter((project) => project.priority === 3)
+              .map((project) => (
+                <div
+                  key={project.id}
+                  className="group bg-white/10 rounded-lg shadow-lg overflow-hidden border border-gray-200/20 transition-transform transform hover:scale-[1.02] hover:shadow-xl flex flex-col h-[350px] md:h-[400px]"
+                >
+                  <div className="flex-1 p-6 flex flex-col">
+                    <h2 className="text-xl font-semibold text-white mb-2">
+                      {project.title}
+                    </h2>
+                    <div className="flex-1 flex items-center justify-center bg-white/5 rounded-lg mb-4">
+                      {/* Placeholder for future image */}
+                      <div className="text-gray-400">Image coming soon</div>
+                    </div>
+                    <div className="flex gap-4 p-6 bg-white/5">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full text-center border font-semibold border-[#fb6f4c] bg-[#fb6f4c] text-black px-4 py-2 rounded-md hover:bg-[#fb6f4c]/80 transition"
+                      >
+                        Visit
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
         </div>
       </section>
 
