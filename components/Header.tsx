@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi"; // Ikoner för hamburgermeny
 import NavLinks from "@/components/layout/NavLinks";
-import LanguageSwitcher from "./LanguageSwitcher";
+//import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,7 +43,7 @@ const Header = () => {
           </h1>
         </div>
         <div className="flex items-center space-x-4">
-          <LanguageSwitcher />
+          {/*  <LanguageSwitcher /> */}
           <button
             onClick={toggleMenu}
             className="text-white"

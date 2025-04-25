@@ -70,7 +70,7 @@ export default async function Home() {
                 Please reach out if you would like to chat code (or jobs!).
               </p>
 
-              <div className="flex gap-4 pt-4 justify-center">
+              <div className="flex gap-12 pt-4 justify-center">
                 <Button
                   href="https://github.com/rasmuskrogh"
                   target="_blank"
