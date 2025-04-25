@@ -14,6 +14,7 @@ interface Project {
   description: string;
   link: string;
   priority: number;
+  image_url: string;
 }
 
 //import { useTranslation } from "react-i18next";
@@ -116,7 +117,7 @@ export default async function Home() {
       >
         <div className="px-4 md:px-8 lg:px-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
-            Working Experience
+            Work Experience
           </h2>
           <div className="mb-6 md:mb-8">
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">

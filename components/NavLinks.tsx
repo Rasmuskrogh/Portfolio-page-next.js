@@ -26,7 +26,7 @@ const NavLinks = ({ onClose }: NavLinksProps) => {
         onClick={() => handleScroll("experience")}
         className="text-white hover:text-gray-300 transition-colors text-xl"
       >
-        Working Experience
+        Work Experience
       </button>
       <button
         onClick={() => handleScroll("projects")}
