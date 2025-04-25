@@ -1,12 +1,19 @@
 //import { useTranslations } from "next-intl";
 import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
-import ProjectArrowWrapper from "@/components/ProjectArrowWrapper";
+import dynamic from "next/dynamic";
 // import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 import ProjectCard from "@/components/ProjectCard";
 import TechStackLink from "@/components/TechStackLink";
 import TechStack from "@/components/TechStack";
+
+const ProjectArrowWrapper = dynamic(
+  () => import("@/components/ProjectArrowWrapper"),
+  {
+    ssr: false,
+  }
+);
 
 interface Project {
   id: string;
