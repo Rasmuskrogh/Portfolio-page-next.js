@@ -10,13 +10,16 @@ export default function ProjectArrowWrapper() {
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY > 0;
-      // Invertera scroll-logiken - peka uppåt när man scrollar ner
       setIsScrolled(scrolled);
 
+      // Om vi är toppscrollade, använd alltid vit färg
+      if (!scrolled) {
+        setCurrentColor("white");
+        return;
+      }
+
       // Beräkna triangeln's position baserat på scroll och transform
-      const arrowPosition = scrolled
-        ? window.scrollY + window.innerHeight - 5 * 16 // 5rem i pixlar
-        : window.scrollY + 280; // 280px från toppen
+      const arrowPosition = window.scrollY + window.innerHeight - 5 * 16; // 5rem i pixlar
 
       // Get all sections and their colors
       const allSections = document.querySelectorAll("section");
@@ -26,7 +29,6 @@ export default function ProjectArrowWrapper() {
         const rect = section.getBoundingClientRect();
         const start = rect.top + window.scrollY;
         const end = start + rect.height;
-        // Get the color from data-color attribute, default to "white" if not set
         const color = (
           section.getAttribute("data-color") === "dark" ? "white" : "black"
         ) as "white" | "black";
@@ -47,7 +49,7 @@ export default function ProjectArrowWrapper() {
 
     window.addEventListener("scroll", handleScroll);
     // Kör direkt för att sätta initiala värden
-    handleScroll();
+    requestAnimationFrame(handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
