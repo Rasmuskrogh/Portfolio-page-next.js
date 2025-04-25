@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
 import { League_Spartan, Lato, Open_Sans } from "next/font/google";
+import type { Metadata } from "next";
 
 import "./globals.css";
 
@@ -19,6 +20,46 @@ const openSans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-open-sans",
 });
+
+export const metadata: Metadata = {
+  title: {
+    default: "Rasmus Krogh-Andersen | Frontend Developer",
+    template: "%s | Rasmus Krogh-Andersen",
+  },
+  description:
+    "Frontend developer specializing in React, TypeScript, and Next.js. Creating modern, responsive web applications with a focus on user experience.",
+  keywords: [
+    "Frontend Developer",
+    "React",
+    "TypeScript",
+    "Next.js",
+    "Web Development",
+    "Portfolio",
+  ],
+  authors: [{ name: "Rasmus Krogh-Andersen" }],
+  creator: "Rasmus Krogh-Andersen",
+  publisher: "Rasmus Krogh-Andersen",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://portfolio-page-next-js.vercel.app/"),
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 export default async function RootLayout({
   children,

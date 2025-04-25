@@ -1,9 +1,6 @@
 "use client";
 
-interface ProjectArrowProps {
-  color: "white" | "black";
-  isScrolled: boolean;
-}
+import { ProjectArrowProps } from "@/types";
 
 export default function ProjectsArrow({
   color,

@@ -1,9 +1,7 @@
 "use client";
 // import { useTranslations } from "next-intl";
 
-interface NavLinksProps {
-  onClose?: () => void;
-}
+import { NavLinksProps } from "@/types";
 
 const NavLinks = ({ onClose }: NavLinksProps) => {
   const handleScroll = (sectionId: string) => {

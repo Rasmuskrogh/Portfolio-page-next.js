@@ -3,8 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Colors */
+  --color-primary: #fb6f4c;
+  --color-secondary: #323131;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-light: #f5f5f5;
+  --color-gray-dark: #333333;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 3rem; /* 48px */
+  --spacing-3xl: 4rem; /* 64px */
+
+  /* Container widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
 }
 
 @layer base {
@@ -19,11 +40,17 @@
   .font-open-sans {
     font-family: var(--font-open-sans);
   }
+
+  body {
+    @apply bg-white text-black;
+  }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
+@layer components {
+  .container {
+    @apply mx-auto px-4;
+    max-width: var(--container-xl);
+  }
 }
 
 html {

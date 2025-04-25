@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi"; // Ikoner för hamburgermeny
-import NavLinks from "@/components/NavLinks";
+import NavLinks from "@/components/layout/NavLinks";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-black/80 backdrop-blur-sm" : "bg-transparent"
+        isScrolled ? "bg-[rgba(0,0,0,0.8)] backdrop-blur-sm" : "bg-transparent"
       }`}
     >
       <div className="flex items-center justify-between p-4">
@@ -57,9 +57,8 @@ const Header = () => {
       {/* Menu Overlay */}
       {isMenuOpen && (
         <div
-          className="fixed top-0 left-0 w-full h-screen bg-black/90 backdrop-blur-sm z-[100]"
+          className="fixed top-0 left-0 w-full h-screen bg-[rgba(0,0,0,0.8)] backdrop-blur-sm z-[100]"
           onClick={closeMenu}
-          style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0 }}
         >
           <div className="fixed inset-0 flex flex-col items-center justify-center">
             <button

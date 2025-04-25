@@ -1,21 +1,14 @@
 //import { useTranslations } from "next-intl";
 import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
-import ProjectArrowWrapper from "@/components/ProjectArrowWrapper";
+import ProjectArrowWrapper from "@/components/projects/ProjectArrowWrapper";
 // import Link from "next/link";
 import { supabase } from "@/lib/supabase";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCard from "@/components/projects/ProjectCard";
 import TechStackLink from "@/components/TechStackLink";
 import TechStack from "@/components/TechStack";
-
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  link: string;
-  priority: number;
-  image_url: string;
-}
+import { Project } from "@/types";
+import Button from "@/components/ui/Button";
 
 //import { useTranslation } from "react-i18next";
 
@@ -23,7 +16,7 @@ export default async function Home() {
   /* const t = useTranslations("Home"); */
   const { data: projects, error } = await supabase
     .from("Projects")
-    .select("*")
+    .select("id, title, description, link, priority, image_url, technologies")
     .returns<Project[]>();
 
   if (error) {
@@ -77,22 +70,24 @@ export default async function Home() {
                 Please reach out if you would like to chat code (or jobs!).
               </p>
 
-              <span className="flex gap-10 pt-2 justify-center italic underline">
-                <a
+              <div className="flex gap-4 pt-4 justify-center">
+                <Button
                   href="https://github.com/rasmuskrogh"
                   target="_blank"
                   rel="noopener noreferrer"
+                  variant="dark"
                 >
                   Github
-                </a>
-                <a
+                </Button>
+                <Button
                   href="https://www.linkedin.com/in/rasmus-krogh-andersen-7b4a421b9/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  variant="dark"
                 >
                   LinkedIn
-                </a>
-              </span>
+                </Button>
+              </div>
             </div>
 
             {/* Bilden */}

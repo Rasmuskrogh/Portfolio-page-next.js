@@ -1,8 +1,4 @@
-interface EmailData {
-  name: string;
-  email: string;
-  message: string;
-}
+import { EmailData } from "@/types";
 
 export async function sendEmail(data: EmailData) {
   const response = await fetch("/api/contact", {
