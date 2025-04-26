@@ -9,6 +9,7 @@ import TechStackLink from "@/components/TechStackLink";
 import TechStack from "@/components/TechStack";
 import { Project } from "@/types";
 import Button from "@/components/ui/Button";
+import Timeline from "@/components/Timeline";
 
 //import { useTranslation } from "react-i18next";
 
@@ -114,60 +115,63 @@ export default async function Home() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
             Work Experience
           </h2>
-          <div className="mb-6 md:mb-8">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
-              Frontend Developer (internship)
-            </h3>
-            <h4 className="text-lg sm:text-xl md:text-2xl font-bold italic">
-              AIMX | October 2024 - January 2025
-            </h4>
-            <ul className="text-lg sm:text-xl md:text-2xl list-disc pl-4 md:pl-6">
-              <li>Built a workload function in Flutter</li>
-              <li>
-                Created a scheduled function that fetches Base64-encoded data
-                from an API once a day
-              </li>
-              <li>
-                Decoded data to Float32 format and converted it to CSV files
-              </li>
-              <li>Implemented database integration for data storage</li>
-            </ul>
-          </div>
-          <div className="mb-6 md:mb-8">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
-              Frontend Developer
-            </h3>
-            <h4 className="text-lg sm:text-xl md:text-2xl font-bold italic">
-              Adssets | May 2022 - January 2023
-            </h4>
-            <ul className="text-lg sm:text-xl md:text-2xl list-disc pl-4 md:pl-6">
-              <li>
-                Created and updated banners using HTML, CSS, and JavaScript
-              </li>
-              <li>Managed database entries using MySQL Workbench</li>
-              <li>Conducted code reviews for colleagues merge requests</li>
-              <li>Prepared and delivered presentations for clients</li>
-            </ul>
-          </div>
-          <div className="mb-6 md:mb-8">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
-              Web Developer (internship)
-            </h3>
-            <h4 className="text-lg sm:text-xl md:text-2xl font-bold italic">
-              Nordic Web Team | September 2021 - May 2022
-            </h4>
-            <ul className="text-lg sm:text-xl md:text-2xl list-disc pl-4 md:pl-6">
-              <li>
-                Set up and developed headless frontends:
-                <ul className="list-disc pl-6">
-                  <li>PWA Studio and React.js with Magento 2 as the backend</li>
-                  <li>
-                    Vue.js and Nuxt.js with Storyblok or Shopware as the backend
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+          <Timeline
+            backgroundColor="white"
+            items={[
+              {
+                type: "work",
+                title: "Frontend Developer (internship)",
+                subtitle: "AIMX",
+                period: "October 2024 - January 2025",
+                description: [
+                  "Built a workload function in Flutter",
+                  "Created a scheduled function that fetches Base64-encoded data from an API once a day",
+                  "Decoded data to Float32 format and converted it to CSV files",
+                  "Implemented database integration for data storage",
+                ],
+                skills: [
+                  "Flutter",
+                  "API Integration",
+                  "Data Processing",
+                  "Database",
+                  "React.js",
+                  "TypeScript",
+                ],
+              },
+              {
+                type: "work",
+                title: "Frontend Developer",
+                subtitle: "Adssets",
+                period: "May 2022 - January 2023",
+                description: [
+                  "Created and updated banners using HTML, CSS, and JavaScript",
+                  "Managed database entries using MySQL Workbench",
+                  "Conducted code reviews for colleagues merge requests",
+                  "Prepared and delivered presentations for clients",
+                ],
+                skills: ["HTML", "CSS", "JavaScript", "MySQL", "Code Review"],
+              },
+              {
+                type: "work",
+                title: "Web Developer (internship)",
+                subtitle: "Nordic Web Team",
+                period: "September 2021 - May 2022",
+                description: [
+                  "Set up and developed headless frontends using PWA Studio and React.js with Magento 2 as the backend",
+                  "Developed Vue.js and Nuxt.js applications with Storyblok or Shopware as the backend",
+                ],
+                skills: [
+                  "React.js",
+                  "Vue.js",
+                  "Nuxt.js",
+                  "Magento",
+                  "Storyblok",
+                  "Shopware",
+                  "CSS",
+                ],
+              },
+            ]}
+          />
         </div>
       </section>
 
@@ -221,91 +225,82 @@ export default async function Home() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
             Education
           </h2>
-          <div className="mb-6 md:mb-8">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
-              Lexicon
-            </h3>
-            <h4 className="text-lg sm:text-xl md:text-2xl font-bold italic">
-              IT-Professional - Continuing IT Education | 2024
-            </h4>
-            <ul className="text-lg sm:text-xl md:text-2xl list-disc pl-4 md:pl-6">
-              <li>
-                Learned and applied HTML5, CSS, JavaScript, and React with
-                TypeScript
-              </li>
-              <li>
-                Completed both individual and group projects based on Figma
-                designs or predefined requirements
-              </li>
-              <li>
-                Built responsive user interfaces from scratch, with focus on
-                component-based architecture
-              </li>
-              <li>
-                Integrated REST APIs and worked with local storage for data
-                handling
-              </li>
-              <li>
-                Practiced agile methodologies including daily standups,
-                retrospectives, and sprint planning
-              </li>
-              <li>
-                Managed tasks using Trello and GitHub Projects, following a
-                structured backlog and to-do workflow
-              </li>
-            </ul>
-          </div>
-          <div className="mb-6 md:mb-8">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
-              Fullstack Bootcamp, Salt
-            </h3>
-            <h4 className="text-lg sm:text-xl md:text-2xl font-bold italic">
-              Fullstack Javascript Developer | 2023
-            </h4>
-            <ul className="text-lg sm:text-xl md:text-2xl list-disc pl-4 md:pl-6">
-              <li>
-                Mob programming with focus on:
-                <ul className="list-disc pl-6">
-                  <li>DOM manipulation</li>
-                  <li>Node.js and REST APIs</li>
-                  <li>Regular expressions</li>
-                  <li>Validation with Zod and Joi</li>
-                  <li>TypeScript</li>
-                  <li>Test-driven development (TDD) using Jest and Cypress</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <div className="mb-6 md:mb-8">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
-              Medieinstitutet
-            </h3>
-            <h4 className="text-lg sm:text-xl md:text-2xl font-bold italic">
-              E-commerce Web Development | 2020-2022
-            </h4>
-            <ul className="text-lg sm:text-xl md:text-2xl list-disc pl-4 md:pl-6">
-              <li>
-                Trained in HTML, CSS, JavaScript, MySQL, PHP, React, and
-                WordPress with WooCommerce
-              </li>
-              <li>Worked with agile methodologies</li>
-              <li>
-                Integrated third-party services such as Firebase, Strapi, and
-                Stripe
-              </li>
-            </ul>
-          </div>
-          <div className="mb-6 md:mb-8">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
-              Malmö Music Academy
-            </h3>
-            <h4 className="text-lg sm:text-xl md:text-2xl font-bold italic">
-              Musician, classical, vocals | 2016-2019
-            </h4>
-            <ul className="text-lg sm:text-xl md:text-2xl list-disc pl-4 md:pl-6">
-              <li>Bachelor&apos;s degree in classical music (baritone)</li>
-            </ul>
-          </div>
+          <Timeline
+            backgroundColor="orange"
+            items={[
+              {
+                type: "education",
+                title: "IT-Professional - Continuing IT Education",
+                subtitle: "Lexicon",
+                period: "2024",
+                description: [
+                  "Learned and applied HTML5, CSS, JavaScript, and React with TypeScript",
+                  "Completed both individual and group projects based on Figma designs or predefined requirements",
+                  "Built responsive user interfaces from scratch, with focus on component-based architecture",
+                  "Integrated REST APIs and worked with local storage for data handling",
+                  "Practiced agile methodologies including daily standups, retrospectives, and sprint planning",
+                ],
+                skills: [
+                  "React",
+                  "TypeScript",
+                  "HTML5",
+                  "CSS",
+                  "JavaScript",
+                  "REST APIs",
+                  "Agile",
+                ],
+              },
+              {
+                type: "education",
+                title: "Fullstack Bootcamp",
+                subtitle: "Salt",
+                period: "2023",
+                description: [
+                  "Mob programming with focus on DOM manipulation, Node.js and REST APIs",
+                  "Worked with regular expressions and validation using Zod and Joi",
+                  "Developed applications using TypeScript",
+                  "Practiced test-driven development (TDD) using Jest and Cypress",
+                ],
+                skills: [
+                  "TypeScript",
+                  "Node.js",
+                  "REST APIs",
+                  "TDD",
+                  "Jest",
+                  "Cypress",
+                ],
+              },
+              {
+                type: "education",
+                title: "Web Development",
+                subtitle: "Medieinstitutet",
+                period: "2020 - 2022",
+                description: [
+                  "Comprehensive education in modern web development",
+                  "Hands-on experience with various web technologies and frameworks",
+                  "Project-based learning with real-world applications",
+                ],
+                skills: [
+                  "Web Development",
+                  "Frontend",
+                  "Backend",
+                  "Project Management",
+                ],
+              },
+              {
+                type: "education",
+                title: "Classical Music",
+                subtitle: "Malmö Music Academy",
+                period: "2016 - 2019",
+                description: [
+                  "Bachelor's degree in classical music (baritone)",
+                  "Extensive training in vocal performance and music theory",
+                  "Regular performances in various settings",
+                ],
+                skills: ["Vocal Performance", "Music Theory", "Stage Presence"],
+              },
+            ]}
+          />
         </div>
       </section>
 
