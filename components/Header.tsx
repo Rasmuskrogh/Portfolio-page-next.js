@@ -34,13 +34,14 @@ const Header = () => {
     >
       <div className="flex items-center justify-between p-4">
         <div>
-          <h1
-            className={`text-white text-xl sm:text-2xl md:text-3xl font-bold transition-all duration-300 whitespace-nowrap ${
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className={`text-white text-xl sm:text-2xl md:text-3xl font-bold transition-all duration-300 whitespace-nowrap hover:text-gray-300 cursor-pointer ${
               isScrolled ? "opacity-100" : "opacity-0"
             }`}
           >
             Rasmus Krogh-Andersen
-          </h1>
+          </button>
         </div>
         <div className="flex items-center space-x-4">
           {/*  <LanguageSwitcher /> */}

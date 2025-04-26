@@ -203,13 +203,13 @@ const TechStack = (): JSX.Element => {
                           <span
                             className={`text-xs px-2 py-1 rounded-full ${
                               item.level === "advanced"
-                                ? "bg-green-500/20 text-green-600"
+                                ? "bg-blue-600/20 text-blue-700"
                                 : item.level === "good"
-                                ? "bg-teal-500/20 text-teal-600"
+                                ? "bg-purple-500/20 text-purple-600"
                                 : item.level === "profficient"
-                                ? "bg-yellow-500/20 text-yellow-600"
+                                ? "bg-green-500/20 text-green-600"
                                 : item.level === "basic"
-                                ? "bg-orange-500/20 text-orange-600"
+                                ? "bg-cyan-500/20 text-cyan-600"
                                 : "bg-red-500/20 text-red-600"
                             }`}
                           >
