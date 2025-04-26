@@ -10,6 +10,7 @@ import TechStack from "@/components/TechStack";
 import { Project } from "@/types";
 import Button from "@/components/ui/Button";
 import Timeline from "@/components/Timeline";
+import { motion } from "framer-motion";
 
 //import { useTranslation } from "react-i18next";
 
@@ -52,12 +53,12 @@ export default async function Home() {
         data-color="white"
       >
         <div className="px-4 md:px-8 lg:px-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
+            About Me
+          </h2>
           <div className="flex flex-col lg:flex-row md:flex-row items-start gap-8">
             {/* Textdelen */}
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold">
-                About me
-              </h2>
               <p className="text-lg sm:text-xl md:text-2xl font-open-sans">
                 Hi! I&apos;m a former classical singer turned web developer. My
                 expertise lies in frontend, especially TypeScript, React and

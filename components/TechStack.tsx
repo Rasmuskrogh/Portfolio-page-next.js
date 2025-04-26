@@ -171,7 +171,7 @@ const TechStack = (): JSX.Element => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold text-center mb-12 text-black"
+          className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold"
         >
           Tech Stack
         </motion.h2>
