@@ -171,7 +171,7 @@ const TechStack = (): JSX.Element => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold text-center mb-12 text-black"
+          className="text-3xl sm:text-4xl md:text-5xl font-open-sans mb-6 md:mb-8 font-bold"
         >
           Tech Stack
         </motion.h2>
@@ -209,7 +209,7 @@ const TechStack = (): JSX.Element => {
                                 : item.level === "profficient"
                                 ? "bg-green-500/20 text-green-600"
                                 : item.level === "basic"
-                                ? "bg-cyan-500/20 text-cyan-600"
+                                ? "bg-yellow-500/20 text-yellow-600"
                                 : "bg-red-500/20 text-red-600"
                             }`}
                           >
