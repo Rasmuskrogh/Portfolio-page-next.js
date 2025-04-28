@@ -134,5 +134,8 @@
     "message": "Message",
     "button": "Send",
     "sending": "Sending..."
+  },
+  "ProjectsArrow": {
+    "title": "Projects"
   }
 }

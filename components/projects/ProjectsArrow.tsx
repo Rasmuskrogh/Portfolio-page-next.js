@@ -1,11 +1,13 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { ProjectArrowProps } from "@/types";
 
 export default function ProjectsArrow({
   color,
   isScrolled,
 }: ProjectArrowProps) {
+  const t = useTranslations("Projects");
   const handleClick = () => {
     if (window.scrollY === 0) {
       // Om vi är högst upp, scrolla till projects
@@ -45,7 +47,7 @@ export default function ProjectsArrow({
             isScrolled ? "opacity-0" : "opacity-100"
           }`}
         >
-          Projects
+          {t("title")}
         </h3>
         <svg
           width="32"

@@ -133,5 +133,8 @@
     "message": "Meddelande",
     "button": "Skicka",
     "sending": "Skickar..."
+  },
+  "ProjectsArrow": {
+    "title": "Projekt"
   }
 }
