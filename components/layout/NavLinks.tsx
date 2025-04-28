@@ -1,9 +1,10 @@
 "use client";
-// import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 import { NavLinksProps } from "@/types";
 
 const NavLinks = ({ onClose }: NavLinksProps) => {
+  const t = useTranslations("Header");
   const handleScroll = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -18,37 +19,37 @@ const NavLinks = ({ onClose }: NavLinksProps) => {
         onClick={() => handleScroll("about")}
         className="text-white hover:text-gray-300 transition-colors text-xl"
       >
-        About Me
+        {t("aboutLink")}
       </button>
       <button
         onClick={() => handleScroll("experience")}
         className="text-white hover:text-gray-300 transition-colors text-xl"
       >
-        Work Experience
+        {t("workLink")}
       </button>
       <button
         onClick={() => handleScroll("projects")}
         className="text-white hover:text-gray-300 transition-colors text-xl"
       >
-        Projects
+        {t("projectsLink")}
       </button>
       <button
         onClick={() => handleScroll("education")}
         className="text-white hover:text-gray-300 transition-colors text-xl"
       >
-        Education
+        {t("educationLink")}
       </button>
       <button
         onClick={() => handleScroll("techstack")}
         className="text-white hover:text-gray-300 transition-colors text-xl"
       >
-        Tech Stack
+        {t("techStackLink")}
       </button>
       <button
         onClick={() => handleScroll("contact")}
         className="text-white hover:text-gray-300 transition-colors text-xl"
       >
-        Contact
+        {t("contactLink")}
       </button>
     </div>
   );

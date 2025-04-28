@@ -1,52 +1,137 @@
 {
   "Header": {
-    "projectsLink": "Projekt",
     "aboutLink": "Om mig",
+    "workLink": "Erfarenheter",
+    "projectsLink": "Projekt",
+    "educationLink": "Utbildning",
+    "techStackLink": "Techstack",
     "contactLink": "Kontakt"
-  },
-  "Home": {
-    "title": "Hej jag heter Rasmus",
-    "short": "Jag  är en frontendutvecklare med fokus på React och Typescript",
-    "projectsButton": "Se mina projekt",
-    "contactButton": "Kontakta mig"
-  },
-  "Contact": {
-    "title": "Kontakt",
-    "short": "Hör gärna av dig via e-post eller sociala medier!",
-    "form": {
-      "name": "Namn",
-      "email": "E-post",
-      "message": "Meddelande",
-      "button": "Skicka"
-    },
-    "linksHeader": "Eller hitta mig på:"
   },
   "About": {
     "title": "Om mig",
-    "description": "Jag är en passionerad frontendutvecklare med erfarenhet av moderna webbutvecklingsteknologier. Här kan du läsa mer om min bakgrund, mina erfarenheter och vad som driver mig som utvecklare.",
-    "backgroundHeader": "Bakgrund",
-    "background": "Jag har en utbildning i webbutveckling från Medieinstitutet och har nyligen genomfört en intensiv frontendutvecklingskurs med Lexicon. Min passion för teknik började tidigt, och jag älskar att skapa lösningar som gör skillnad för användare.",
-    "experienceHeader": "Erfarenheter",
-    "experience": {
-      "1": "Frontendutvecklare på Adssets (2022)",
-      "2": "Utbildning i webbutveckling från Medieinstitutet (2 år)",
-      "3": "Frontendutveckling med React och TypeScript i Lexicon (2024)",
-      "4": "Erfarenhet av olika CMS-plattformar som Storyblok, Shopware och Magento 2"
-    },
-    "skillsHeader": "Färdigheter",
-    "skills": {
-      "1": "React & TypeScript",
-      "2": "JavaScript, HTML, CSS",
-      "3": "Vue.js, Nuxt.js",
-      "4": "MySQL, PostgreSQL",
-      "5": "Versionering med Git",
-      "6": "Erfarenhet av Node.js och Tailwind"
-    },
-    "goalsHeader": "Mål",
-    "goals": "Jag strävar efter att bli en expert inom React och TypeScript och ser fram emot att bygga skalbara och användarvänliga lösningar. Jag vill även fortsätta utvecklas inom Node.js och moderna frontend-ramverk."
+    "description": "Hej! Jag är en före detta klassisk sångare som har bytt bana och blivit utvecklare. Mina styrkor ligger inom frontend, särskilt TypeScript, React och Next.js. Men min <techStackLink>techstack</techStackLink> sträcker sig längre än så. Det jag gillar mest med kodning är att hitta effektiva lösningar på stora problem och sedan se mina idéer bli verklighet. Andra har beskrivit mig som anpassningsbar, analytisk, lugn, passionerad och snabblärd.",
+    "connect": "Kontakta mig gärna om du vill snacka kod (eller jobb!)."
+  },
+  "Experience": {
+    "title": "Erfarenheter",
+    "aimxTitle": "Frontendutvecklare (praktik)",
+    "aimxPeriod": "Oktober 2024 - Januari 2025",
+    "aimxDescription": [
+      "Skapade en arbetsbelastningsfunktion i Flutter",
+      "Skapade en schemalagd funktion som hämtar Base64-kodad data från en API en gång per dag",
+      "Avkodade data till Float32-format och konverterade det till CSV-filer",
+      "Implementerade databasintegration för dataförvaring"
+    ],
+    "aimxSkills": [
+      "Flutter",
+      "API Integration",
+      "Data Processing",
+      "Database",
+      "React.js",
+      "TypeScript"
+    ],
+    "adssetsTitle": "Web Developer",
+    "adssetsPeriod": "Maj 2022 - Januari 2023",
+    "adssetsDescription": [
+      "Skapade och uppdaterade banner med HTML, CSS och JavaScript",
+      "Hanterade databasposter med MySQL Workbench",
+      "Genomförde code reviews på kollegors merge-förfrågningar",
+      "Förberedde och levererade presentationer för klienter"
+    ],
+    "adssetsSkills": ["HTML", "CSS", "JavaScript", "MySQL", "Code Review"],
+    "nordicWebTeamTitle": "Webbutvecklare (praktik)",
+    "nordicWebTeamPeriod": "September 2021 - Maj 2022",
+    "nordicWebTeamDescription": [
+      "Satte upp och utvecklade headless frontends med PWA Studio och React.js som backend",
+      "Utvecklade Vue.js och Nuxt.js applikationer med Storyblok eller Shopware som backend"
+    ],
+    "nordicWebTeamSkills": [
+      "React.js",
+      "Vue.js",
+      "Nuxt.js",
+      "Magento",
+      "Storyblok",
+      "Shopware",
+      "PWA Studio",
+      "CSS"
+    ]
   },
   "Projects": {
     "title": "Mina projekt",
-    "short": "Här är några av de projekt jag har jobbat på. Klicka på ett projekt för att läsa mer eller besöka det live."
+    "technologies": "Skapade med följande tekniker:"
+  },
+  "Education": {
+    "title": "Utbildning",
+    "description": "Jag har studerat IT-Professional på Lexicon och har lärt mig mycket om frontendutveckling och andra tekniker.",
+    "lexiconTitle": "IT-Professional - Vidareutbildning i IT",
+    "lexiconDescription": [
+      "Lärt mig och tillämpat HTML5, CSS, JavaScript och React med TypeScript",
+      "Slutfört både individuella och gruppprojekt baserade på Figma-design eller fördefinierade krav",
+      "Skapat responsiva användargränssnitt från grunden, med fokus på komponentbaserad arkitektur",
+      "Integrerade REST API:er och arbetade med lokal lagring för datahantering",
+      "Tränade agila metoder inklusive dagliga standuppsamtal, retrospektiv och sprintplanering"
+    ],
+    "lexiconSkills": [
+      "React",
+      "TypeScript",
+      "HTML5",
+      "CSS",
+      "JavaScript",
+      "REST APIs",
+      "Agile methodologies"
+    ],
+    "saltTitle": "Fullstack Bootcamp",
+    "saltDescription": [
+      "Mob programming med fokus på DOM-manipulation, Node.js och REST API:er",
+      "Arbetade med reguljära uttryck och validering med Zod och Joi",
+      "Utvecklade applikationer med TypeScript",
+      "Tränade testdriven utveckling (TDD) med Jest och Cypress"
+    ],
+    "saltSkills": [
+      "TypeScript",
+      "Node.js",
+      "REST APIs",
+      "TDD",
+      "Jest",
+      "Cypress"
+    ],
+    "medieTitle": "Webbutveckling",
+    "medieDescription": [
+      "Utbildning i modern webbutveckling",
+      "Praktisk erfarenhet av olika webbtekniker och ramverk",
+      "Praktik i gruppprojekt"
+    ],
+    "medieSkills": [
+      "HTML5",
+      "CSS",
+      "scss",
+      "Sass",
+      "JavaScript",
+      "React.js",
+      "PHP",
+      "MySQL",
+      "Git",
+      "Wordpress",
+      "WooCommerce",
+      "Scrum"
+    ],
+    "malmoTitle": "Klassisk musik",
+    "malmoDescription": [
+      "Högskoleexamen i klassisk musik (baryton)",
+      "Klassisk sång; oratorier, romanser, lieder, opera. Solistiskt eller i ensemble",
+      "Pianolektioner",
+      "Musikteori. Gehörslära, Satslära, Harmonilära",
+      "Regelbundna framträdanden i olika sammanhang"
+    ],
+    "malmoSkills": ["Sång", "Musikteori", "Scenframställning"]
+  },
+
+  "Contact": {
+    "title": "Kontakt",
+    "name": "Namn",
+    "email": "E-post",
+    "message": "Meddelande",
+    "button": "Skicka",
+    "sending": "Skickar..."
   }
 }

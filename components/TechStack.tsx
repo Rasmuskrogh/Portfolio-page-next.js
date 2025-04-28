@@ -209,7 +209,7 @@ const TechStack = (): JSX.Element => {
                                 : item.level === "profficient"
                                 ? "bg-green-500/20 text-green-600"
                                 : item.level === "basic"
-                                ? "bg-cyan-500/20 text-cyan-600"
+                                ? "bg-yellow-500/20 text-yellow-600"
                                 : "bg-red-500/20 text-red-600"
                             }`}
                           >

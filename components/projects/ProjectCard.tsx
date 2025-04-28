@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
@@ -8,6 +9,7 @@ import { ProjectCardProps } from "@/types";
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const [imageError, setImageError] = useState(false);
+  const t = useTranslations("Projects");
 
   useEffect(() => {
     // Logga projektinformationen
@@ -124,9 +126,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           <div
             className={`${styles.buttonMargin} flex flex-col gap-2 p-6 bg-[#474646]/60 w-full`}
           >
-            <p className="text-white/80 text-sm">
-              Made using the following technologies:
-            </p>
+            <p className="text-white/80 text-sm">{t("technologies")}</p>
             <div className="flex flex-wrap gap-2">
               {project.technologies?.map((tech, index) => (
                 <span

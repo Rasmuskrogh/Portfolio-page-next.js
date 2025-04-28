@@ -2,22 +2,17 @@
 
 import Link from "next/link";
 
-const TechStackLink = () => {
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const element = document.getElementById("techstack");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
+const TechStackLink = ({ children }: { children: React.ReactNode }) => {
   return (
-    <span>
-      <Link className="underline" href="#techstack" onClick={handleClick}>
-        tech stack
-      </Link>
-    </span>
+    <Link
+      href="#techstack"
+      scroll={false}
+      className="underline cursor-pointer"
+    >
+      {children || "tech stack"}
+    </Link>
   );
 };
 
 export default TechStackLink;
+

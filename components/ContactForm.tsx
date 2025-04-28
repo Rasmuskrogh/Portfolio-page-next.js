@@ -1,10 +1,10 @@
 "use client";
-// import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { sendEmail } from "@/lib/email";
 
 export default function ContactForm() {
-  // const t = useTranslations("Contact.form");
+  const t = useTranslations("Contact");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -39,7 +39,7 @@ export default function ContactForm() {
       className="max-w-lg mx-auto p-8 bg-[#1a1a1a] rounded-lg shadow-lg"
     >
       <label className="block mb-6 text-white">
-        <span className="block text-lg font-lato mb-2">Name</span>
+        <span className="block text-lg font-lato mb-2">{t("name")}</span>
         <input
           type="text"
           name="name"
@@ -47,12 +47,12 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           className="w-full p-3 bg-white/10 border border-white/20 rounded text-white placeholder-white/50 focus:outline-none focus:border-[#fb6f4c] transition-colors"
-          placeholder="Name"
+          placeholder={t("name")}
         />
       </label>
 
       <label className="block mb-6 text-white">
-        <span className="block text-lg font-lato mb-2">Email</span>
+        <span className="block text-lg font-lato mb-2">{t("email")}</span>
         <input
           type="email"
           name="email"
@@ -60,19 +60,19 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           className="w-full p-3 bg-white/10 border border-white/20 rounded text-white placeholder-white/50 focus:outline-none focus:border-[#fb6f4c] transition-colors"
-          placeholder="Email"
+          placeholder={t("email")}
         />
       </label>
 
       <label className="block mb-8 text-white">
-        <span className="block text-lg font-lato mb-2">Message</span>
+        <span className="block text-lg font-lato mb-2">{t("message")}</span>
         <textarea
           name="message"
           value={formData.message}
           onChange={handleChange}
           required
           className="w-full p-3 bg-white/10 border border-white/20 rounded text-white placeholder-white/50 focus:outline-none focus:border-[#fb6f4c] transition-colors h-32 resize-none"
-          placeholder="Message"
+          placeholder={t("message")}
         ></textarea>
       </label>
 
@@ -81,7 +81,7 @@ export default function ContactForm() {
         disabled={status === "submitting"}
         className="w-full bg-[#fb6f4c] text-white p-3 rounded font-lato text-lg hover:bg-[#fb6f4c]/90 transition-colors disabled:opacity-50"
       >
-        {status === "submitting" ? "Sending..." : "Send"}
+        {status === "submitting" ? t("sending") : t("button")}
       </button>
     </form>
   );
