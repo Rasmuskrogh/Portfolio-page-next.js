@@ -6,8 +6,10 @@ import ProjectsArrow from "./ProjectsArrow";
 export default function ProjectArrowWrapper() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentColor, setCurrentColor] = useState<"white" | "black">("white");
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const handleScroll = () => {
       const scrolled = window.scrollY > 0;
       setIsScrolled(scrolled);
@@ -17,9 +19,6 @@ export default function ProjectArrowWrapper() {
         setCurrentColor("white");
         return;
       }
-
-      // Beräkna triangeln's position baserat på scroll och transform
-      // const arrowPosition = window.scrollY + window.innerHeight - 5 * 16; // 5rem i pixlar
 
       // Get all sections and their colors
       const allSections = document.querySelectorAll("section");
@@ -38,8 +37,7 @@ export default function ProjectArrowWrapper() {
       // Find which section the arrow is in
       let newColor: "white" | "black" = "white";
       for (const section of sections) {
-        if (280 <= section.end) {
-          // Changed to use fixed position
+        if (window.scrollY + window.innerHeight - 2 * 16 <= section.end) {
           newColor = section.color;
           break;
         }
@@ -54,6 +52,10 @@ export default function ProjectArrowWrapper() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return <ProjectsArrow color={currentColor} isScrolled={isScrolled} />;
 }
