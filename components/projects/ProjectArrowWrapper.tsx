@@ -19,7 +19,7 @@ export default function ProjectArrowWrapper() {
       }
 
       // Beräkna triangeln's position baserat på scroll och transform
-      const arrowPosition = window.scrollY + window.innerHeight - 5 * 16; // 5rem i pixlar
+      // const arrowPosition = window.scrollY + window.innerHeight - 5 * 16; // 5rem i pixlar
 
       // Get all sections and their colors
       const allSections = document.querySelectorAll("section");
@@ -38,7 +38,8 @@ export default function ProjectArrowWrapper() {
       // Find which section the arrow is in
       let newColor: "white" | "black" = "white";
       for (const section of sections) {
-        if (arrowPosition <= section.end) {
+        if (280 <= section.end) {
+          // Changed to use fixed position
           newColor = section.color;
           break;
         }

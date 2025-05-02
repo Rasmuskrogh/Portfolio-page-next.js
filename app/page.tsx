@@ -13,7 +13,7 @@ export default async function Home() {
       <ProjectArrowWrapper />
       {/* Hero Section */}
       <section
-        className="h-[40vh] flex flex-col items-start justify-start bg-[#323131] text-white relative"
+        className="h-[18rem] flex flex-col items-start justify-start bg-[#323131] text-white relative"
         data-color="dark"
       >
         <div className="pl-4 pt-4 md:pl-8 lg:pl-16 pr-4 md:pr-8 lg:pr-16">

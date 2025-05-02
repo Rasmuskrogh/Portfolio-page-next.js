@@ -24,11 +24,7 @@ export default function ProjectsArrow({
   return (
     <div
       className="fixed right-0 pr-8 z-10 transition-all duration-700
-        [transform:translateY(calc(50vh-10rem))]
-        sm:[transform:translateY(calc(50vh-9rem))]
-        md:[transform:translateY(calc(50vh-12rem))]
-        lg:[transform:translateY(calc(50vh-14rem))]
-        xl:[transform:translateY(calc(50vh-10rem))]
+        top-[218px] md:top-[210px] lg:top-[205px]
         [&.scrolled]:[transform:translateY(calc(100dvh-5.3rem))]
         sm:[&.scrolled]:[transform:translateY(calc(100dvh-5.3rem))]
         md:[&.scrolled]:[transform:translateY(calc(100dvh-5.3rem))]
