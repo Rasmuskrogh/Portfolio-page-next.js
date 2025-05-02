@@ -7,6 +7,10 @@
     "techStackLink": "Techstack",
     "contactLink": "Kontakt"
   },
+  "Hero": {
+    "frontend": "FRONTENDUTVECKLARE",
+    "web": "WEBBUTVECKLARE"
+  },
   "About": {
     "title": "Om mig",
     "description": "Hej! Jag är en före detta klassisk sångare som har bytt bana och blivit utvecklare. Mina styrkor ligger inom frontend, särskilt TypeScript, React och Next.js. Men min <techStackLink>techstack</techStackLink> sträcker sig längre än så. Det jag gillar mest med kodning är att hitta effektiva lösningar på stora problem och sedan se mina idéer bli verklighet. Andra har beskrivit mig som anpassningsbar, analytisk, lugn, passionerad och snabblärd.",
@@ -77,8 +81,8 @@
       "HTML5",
       "CSS",
       "JavaScript",
-      "REST APIs",
-      "Agile methodologies"
+      "REST APIer",
+      "Agila metoder"
     ],
     "saltTitle": "Fullstack Bootcamp",
     "saltDescription": [
@@ -125,7 +129,13 @@
     ],
     "malmoSkills": ["Sång", "Musikteori", "Scenframställning"]
   },
-
+  "TechStack": {
+    "main": "Min primära verktyg och tekniker",
+    "frontend": "Frontendtekniker och ramverk",
+    "backend": "Backendtekniker och CMS",
+    "databasesTitle": "Databaser & verktyg",
+    "databases": "Databassystem och utvecklingsverktyg"
+  },
   "Contact": {
     "title": "Kontakt",
     "name": "Namn",

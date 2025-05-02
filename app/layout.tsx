@@ -73,7 +73,10 @@ export default async function RootLayout({
       lang={locale}
       className={`${leagueSpartan.variable} ${lato.variable} ${openSans.variable}`}
     >
-      <body className="flex min-h-screen flex-col bg-gray-100 text-gray-900">
+      <body
+        className="flex min-h-screen flex-col bg-gray-100 text-gray-900"
+        suppressHydrationWarning
+      >
         <NextIntlClientProvider>
           <Header />
           <main className="flex-1">{children}</main>

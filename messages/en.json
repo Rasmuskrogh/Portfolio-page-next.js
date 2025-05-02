@@ -7,6 +7,10 @@
     "techStackLink": "Tech Stack",
     "contactLink": "Contact"
   },
+  "Hero": {
+    "frontend": "FRONTEND DEVELOPER",
+    "web": "WEB DEVELOPER"
+  },
   "About": {
     "title": "About me",
     "description": "Hi! I'm a former classical singer turned web developer. My expertise lies in frontend, especially TypeScript, React and Next.js. However, my <techStackLink>tech stack</techStackLink> extends beyond those frameworks. My favourite part of coding is figuring out effective solutions to big problems and then seeing my creation come to life. Others have described me as: adaptable, analytical, level-headed, passionate and quick to learn.",
@@ -126,6 +130,13 @@
       "Regular performances in various settings"
     ],
     "malmoSkills": ["Vocal Performance", "Music Theory", "Stage Presence"]
+  },
+  "TechStack": {
+    "main": "My primary tools and technologies",
+    "frontend": "Frontend technologies and frameworks",
+    "backend": "Backend technologies and content management systems",
+    "databasesTitle": "Databases & tools",
+    "databases": "Database systems and development tools"
   },
   "Contact": {
     "title": "Contact",

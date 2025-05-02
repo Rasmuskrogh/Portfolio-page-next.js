@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import React, { JSX } from "react";
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
@@ -23,10 +24,11 @@ import {
 } from "react-icons/si";
 
 const TechStack = (): JSX.Element => {
+  const t = useTranslations("TechStack");
   const categories = [
     {
       title: "Main Stack",
-      description: "My primary tools and technologies",
+      description: t("main"),
       items: [
         {
           name: "Next.js",
@@ -57,7 +59,7 @@ const TechStack = (): JSX.Element => {
     },
     {
       title: "Frontend",
-      description: "Frontend technologies and frameworks",
+      description: t("frontend"),
       items: [
         {
           name: "Vue.js",
@@ -88,7 +90,7 @@ const TechStack = (): JSX.Element => {
     },
     {
       title: "Backend & CMS",
-      description: "Backend technologies and content management systems",
+      description: t("backend"),
       items: [
         {
           name: "Strapi",
@@ -118,8 +120,8 @@ const TechStack = (): JSX.Element => {
       ],
     },
     {
-      title: "Databases & Tools",
-      description: "Database systems and development tools",
+      title: t("databasesTitle"),
+      description: t("databases"),
       items: [
         {
           name: "MySQL",
