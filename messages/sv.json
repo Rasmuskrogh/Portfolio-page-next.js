@@ -55,9 +55,22 @@
       "Nuxt.js",
       "Magento",
       "Storyblok",
-      "Shopware",
+      "Shopware", 
       "PWA Studio",
       "CSS"
+    ],
+    "freelanceTitle": "Webbutvecklare | Frontendutvecklare",
+    "freelancePeriod": "Januari 2025 - Pågående",
+    "freelanceDescription": [
+      "Skapar hemsidor åt småföretag och enskilda aktörer",
+      "Integrerar databas och egenbyggd backend dashboard för egen hantering av data"
+    ],
+    "freelanceSkills": [
+      "HTML5",
+      "CSS",
+      "TypeScript",
+      "PostgreSQL",
+      "Next.js"
     ]
   },
   "Projects": {
@@ -127,7 +140,25 @@
       "Musikteori. Gehörslära, Satslära, Harmonilära",
       "Regelbundna framträdanden i olika sammanhang"
     ],
-    "malmoSkills": ["Sång", "Musikteori", "Scenframställning"]
+    "malmoSkills": ["Sång", "Musikteori", "Scenframställning"],
+    "uxTitle": "UX och tillgänglighet för utvecklare",
+    "uxPeriod": "2025 - 2026",
+    "uxDescription": [
+      "Lär mig om tillgänglighetsregler och bästa praxis",
+      "Lär mig om design thinking processen, empathize, define, ideate, prototype och test",
+      "Lär mig om användarresor, POV, empathy map, wireframing och prototyping",
+      "Figma"
+    ],
+    "uxSkills": [
+      "Tillgänglighet",
+      "Design thinking",
+      "Användarresor",
+      "POV",
+      "Empathy map",
+      "Wireframing",
+      "Prototyping",
+      "Figma"
+    ]
   },
   "TechStack": {
     "main": "Min primära verktyg och tekniker",

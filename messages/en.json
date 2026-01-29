@@ -58,6 +58,19 @@
       "Shopware",
       "PWA Studio",
       "CSS"
+    ],
+    "freelanceTitle": "Web Developer | Frontend Developer",
+    "freelancePeriod": "January 2025 - Ongoing",
+    "freelanceDescription": [
+      "Creates websites for small businesses and individuals",
+      "Integrates database and custom backend dashboard for self-management of data"
+    ],
+    "freelanceSkills": [
+      "HTML5",
+      "CSS",
+      "TypeScript",
+      "PostgreSQL",
+      "Next.js"
     ]
   },
   "Projects": {
@@ -129,7 +142,25 @@
       "Extensive training in vocal performance and music theory",
       "Regular performances in various settings"
     ],
-    "malmoSkills": ["Vocal Performance", "Music Theory", "Stage Presence"]
+    "malmoSkills": ["Vocal Performance", "Music Theory", "Stage Presence"],
+    "uxTitle": "UX and accessibility for developers",
+    "uxPeriod": "2025 - 2026",
+    "uxDescription": [
+      "Learning about accessibility rules and best practices",
+      "Learning about the design thinking process, empathize, define, ideate, prototype and test",
+      "Learning about user journey, POV, emapthy maps, wireframing and prototyping",
+      "Figma"
+    ],
+    "uxSkills": [
+      "Accessibility",
+      "Design Thinking",
+      "User Journey",
+      "POV",
+      "Empathy Maps",
+      "Wireframing",
+      "Prototyping",
+      "Figma"
+    ]
   },
   "TechStack": {
     "main": "My primary tools and technologies",

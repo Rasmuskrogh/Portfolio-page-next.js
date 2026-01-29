@@ -20,6 +20,14 @@ function Experience() {
           items={[
             {
               type: "work",
+              title: t("freelanceTitle"),
+              subtitle: t("freelancePeriod"),
+              period: t("freelancePeriod"),
+              description: t.raw("freelanceDescription"),
+              skills: t.raw("freelanceSkills"),
+            },
+            {
+              type: "work",
               title: t("aimxTitle"),
               subtitle: "AIMX",
               period: t("aimxPeriod"),
