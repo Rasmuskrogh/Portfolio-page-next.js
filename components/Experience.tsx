@@ -21,7 +21,7 @@ function Experience() {
             {
               type: "work",
               title: t("freelanceTitle"),
-              subtitle: t("freelancePeriod"),
+              subtitle: "Freelance",
               period: t("freelancePeriod"),
               description: t.raw("freelanceDescription"),
               skills: t.raw("freelanceSkills"),

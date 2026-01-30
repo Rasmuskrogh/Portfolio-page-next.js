@@ -20,6 +20,14 @@ function Education() {
           items={[
             {
               type: "education",
+              title: t("uxTitle"),
+              subtitle: "Medieinstitutet",
+              period: t("uxPeriod"),
+              description: t.raw("uxDescription"),
+              skills: t.raw("uxSkills"),
+            },
+            {
+              type: "education",
               title: t("lexiconTitle"),
               subtitle: "Lexicon",
               period: "2024",
