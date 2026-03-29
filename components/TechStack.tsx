@@ -21,6 +21,7 @@ import {
   SiVuedotjs,
   SiNuxtdotjs,
   SiOpenai,
+  SiClaude,
 } from "react-icons/si";
 
 const TechStack = (): JSX.Element => {
@@ -61,6 +62,16 @@ const TechStack = (): JSX.Element => {
       title: "Frontend",
       description: t("frontend"),
       items: [
+        {
+          name: "Next.js",
+          icon: <SiNextdotjs className="w-8 h-8 text-black" />,
+          level: "good",
+        },
+        {
+          name: "React",
+          icon: <FaReact className="w-8 h-8 text-[#61DAFB]" />,
+          level: "advanced",
+        },
         {
           name: "Vue.js",
           icon: <SiVuedotjs className="w-8 h-8 text-[#4FC08D]" />,
@@ -124,6 +135,16 @@ const TechStack = (): JSX.Element => {
       description: t("databases"),
       items: [
         {
+          name: "Supabase",
+          icon: <SiSupabase className="w-8 h-8 text-[#3ECF8E]" />,
+          level: "good",
+        },
+        {
+          name: "PostgreSQL",
+          icon: <SiPostgresql className="w-8 h-8 text-[#4169E1]" />,
+          level: "good",
+        },
+        {
           name: "MySQL",
           icon: <SiMysql className="w-8 h-8 text-[#4479A1]" />,
           level: "profficient",
@@ -161,6 +182,11 @@ const TechStack = (): JSX.Element => {
           ),
           level: "none",
         },
+        {
+          name: "Claude AI",
+          icon: <SiClaude className="w-8 h-8 text-[#DC7C4F]" />,
+          level: "none",
+        }
       ],
     },
   ];
@@ -203,17 +229,16 @@ const TechStack = (): JSX.Element => {
                         <span className="text-black">{item.name}</span>
                         {item.level !== "none" && (
                           <span
-                            className={`text-xs px-2 py-1 rounded-full ${
-                              item.level === "advanced"
-                                ? "bg-blue-600/20 text-blue-700"
-                                : item.level === "good"
+                            className={`text-xs px-2 py-1 rounded-full ${item.level === "advanced"
+                              ? "bg-blue-600/20 text-blue-700"
+                              : item.level === "good"
                                 ? "bg-purple-500/20 text-purple-600"
                                 : item.level === "profficient"
-                                ? "bg-green-500/20 text-green-600"
-                                : item.level === "basic"
-                                ? "bg-yellow-500/20 text-yellow-600"
-                                : "bg-red-500/20 text-red-600"
-                            }`}
+                                  ? "bg-green-500/20 text-green-600"
+                                  : item.level === "basic"
+                                    ? "bg-yellow-500/20 text-yellow-600"
+                                    : "bg-red-500/20 text-red-600"
+                              }`}
                           >
                             {item.level}
                           </span>
