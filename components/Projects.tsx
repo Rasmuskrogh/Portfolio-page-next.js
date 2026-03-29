@@ -47,8 +47,8 @@ function Projects() {
           {t("title")}
         </h2>
 
-        {/* Priority 1 Project */}
-        <div className="mb-12">
+        {/* Priority 1 projects */}
+        <div className="mb-12 flex flex-col gap-8">
           {projects
             .filter((project) => project.priority === 1)
             .map((project) => (
